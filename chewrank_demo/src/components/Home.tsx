@@ -1,51 +1,57 @@
-import Image from "next/image";
-import React, { useRef, useState } from "react";
-import { ReviewBack } from "~/svgs/ReviewBack";
-import { ReviewComment } from "~/svgs/ReviewComment";
-import { ReviewLike } from "~/svgs/ReviewLike";
-import { ReviewSave } from "~/svgs/ReviewSave";
-import { ReviewShare } from "~/svgs/ReviewShare";
-import data from "../data";
-import { HomeLike } from "~/svgs/HomeLike";
-import { main } from "tailwind.config";
+import Image from "next/image"
+import React, { useRef, useState } from "react"
+import { main } from "tailwind.config"
+import { HomeLike } from "~/svgs/HomeLike"
+import data from "../data"
 
 export const Home: React.FC<{
   setPage: React.Dispatch<React.SetStateAction<string>>;
 }> = ({ setPage }) => {
-  const [mousePos, setMousePos] = useState(["540px", "22px"]);
   const [sort, setSort] = useState("Hot");
-  const reviewRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
+  const sortModes = ["Hot", "New", "Following", "Best"];
   const reviewPreview = (e: (typeof data.hot)[0], i: number) => (
     <div
       key={i}
       className="mb-6 flex w-full cursor-pointer flex-col bg-white"
-      onClick={(e) => {
-        console.log(`${e.clientX - 490}px ${e.clientY - 310}px`);
-        if (reviewRef.current) {
-          reviewRef.current.style.transitionDuration = "0ms";
-          reviewRef.current.style.left = (e.clientX - 180).toString() + "px";
-          reviewRef.current.style.top = (e.clientY - 320).toString() + "px";
-          reviewRef.current.style.pointerEvents = "auto";
-          setMousePos([
-            (e.clientX - 180).toString() + "px",
-            (e.clientY - 320).toString() + "px",
-          ]);
-          setTimeout(() => {
-            if (reviewRef.current && mainRef.current) {
-              reviewRef.current.style.transitionDuration = "200ms";
-              reviewRef.current.style.left = mainRef.current.style.left;
-              reviewRef.current.style.top = mainRef.current.style.top;
-              reviewRef.current.style.opacity = "100";
-              reviewRef.current.style.transform = "scale(1)";
-            }
-          }, 120);
-        }
+      onClick={() => {
+        const img: HTMLElement | null = document.querySelector(
+          `#previewImg-${i}`
+        );
+        if (!img || !img.parentElement || !mainRef.current) return;
+        const mp = mainRef.current.getBoundingClientRect();
+        const pp = img.parentElement.getBoundingClientRect();
+
+        setTimeout(() => {
+          if (img.parentElement) img.parentElement.style.overflow = "visible";
+          img.style.transitionDuration = "200ms";
+          img.style.position = "absolute";
+          img.style.left = `${mp.x - pp.x}px`;
+          img.style.top = `${mp.y - pp.y}px`;
+          img.style.zIndex = "100";
+          img.style.width = "360px";
+          img.style.height = "640px";
+        }, 1);
+        setTimeout(() => {
+          setPage("Review:" + i.toString());
+        }, 100);
+        setTimeout(() => {
+          if (img.parentElement) img.parentElement.style.overflow = "clip";
+          img.style.transitionDuration = "0ms";
+          img.style.position = "absolute";
+          img.style.left = "0";
+          img.style.top = "0";
+          img.style.zIndex = "10";
+          img.style.width = "168px";
+          img.style.height = `${e.height}px`;
+        }, 500);
       }}
     >
       <div
         className="relative h-full w-full shrink-0 overflow-clip rounded-xl"
-        style={{ height: e.height }}
+        style={{
+          height: `${e.height}px`,
+        }}
       >
         <Image
           src="/test.png"
@@ -53,11 +59,22 @@ export const Home: React.FC<{
           fill={true}
           style={{ objectFit: "cover" }}
         />
+        <div
+          id={`previewImg-${i}`}
+          className="absolute left-0 top-0 h-full w-full ease-in"
+        >
+          <Image
+            src="/test.png"
+            alt="e.title"
+            fill={true}
+            style={{ objectFit: "cover" }}
+          />
+        </div>
       </div>
       <div className="w-full shrink-0 px-3 pt-2.5 text-sm font-semibold">
         {e.title}
       </div>
-      <div className="flex w-full shrink-0 flex-row items-center pl-3 pr-3.5 pt-2">
+      <div className="flex w-full shrink-0 flex-row items-center pl-2.5 pr-3.5 pt-2">
         <div className="relative h-[22px] w-[22px] shrink-0 overflow-clip rounded">
           <Image
             src="/test.png"
@@ -79,79 +96,8 @@ export const Home: React.FC<{
   );
 
   return (
-    <>
-      {/* Review */}
-      <div
-        ref={reviewRef}
-        className="pointer-events-none absolute z-[200] h-[640px] w-[360px] scale-[0.1] overflow-scroll rounded-[20px] bg-orange-500 opacity-0 ease-in-out"
-        // style={{boxShadow: "0 0px 64px 36px rgb(0 0 0 / 0.9)"}}
-      >
-        <div className="relative h-full w-full">
-          <Image
-            src="/test.png"
-            fill={true}
-            alt="test"
-            style={{ objectFit: "cover" }}
-          />
-          <div className="absolute top-0 z-[100] flex h-full w-full flex-col">
-            <div className="h-12 w-full shrink-0 px-6">
-              <div className="relative h-full w-full">
-                <Image
-                  src="/status_bar_white.png"
-                  fill={true}
-                  alt="status bar"
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
-            </div>
-            <div
-              className="font-xl relative ml-4 h-6 w-6 cursor-pointer text-white"
-              style={{ filter: "drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.5))" }}
-              onClick={() => {
-                if (reviewRef.current) {
-                  // reviewRef.current.style.left = mousePos[0] || "0px";
-                  // reviewRef.current.style.top = mousePos[1] || "0px";
-                  reviewRef.current.style.pointerEvents = "none";
-                  reviewRef.current.style.opacity = "0";
-                  reviewRef.current.style.transform = "scale(0.1)";
-                }
-              }}
-            >
-              <ReviewBack className="w-9" />
-            </div>
-            <div className="flex h-full w-full flex-row p-4">
-              <div className="grow-1 flex h-full w-full flex-col justify-end ">
-                <div
-                  className="mb-[60px] text-xs text-white"
-                  style={{ textShadow: "0px 2px 16px rgba(0, 0, 0, 0.5)" }}
-                >
-                  jhgfcvhbjnkl kjhg jkhgfdkjh jhgf
-                </div>
-              </div>
-              <div
-                className="flex h-full w-6 shrink-0 flex-col items-center justify-end"
-                style={{
-                  filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.5))",
-                }}
-              >
-                <ReviewLike className="mb-2 w-[26px]" />
-                <div className="mb-5 text-xs font-medium text-white">999</div>
-                <ReviewSave className="mb-2 w-[22px]" />
-                <div className="mb-5 text-xs font-medium text-white">999</div>
-                <ReviewComment className="mb-2 w-6" />
-                <div className="mb-5 text-xs font-medium text-white">999</div>
-                <ReviewShare className="mb-3 w-6" />
-              </div>
-            </div>
-          </div>
-          <div className="fixed bottom-4 left-4 z-[150] flex h-12 w-[284px] flex-row items-center rounded-full bg-white">
-            restaurant
-          </div>
-        </div>
-      </div>
-
-      {/* Home */}
-      <div ref={mainRef} className="h-12 w-full shrink-0 px-6">
+    <div ref={mainRef} className="relative">
+      <div className="h-12 w-full shrink-0 px-6">
         <div className="relative h-full w-full">
           <Image
             src="/status_bar_black.png"
@@ -161,7 +107,7 @@ export const Home: React.FC<{
           />
         </div>
       </div>
-      <div className="relative flex h-full w-full flex-col overflow-scroll bg-white">
+      <div className="flex h-[720px] w-full flex-col overflow-scroll bg-white">
         <div className="sticky top-0 z-50 flex h-8 shrink-0 flex-row items-center bg-white pl-4">
           <Image
             src="/HomeLocation.svg"
@@ -193,7 +139,7 @@ export const Home: React.FC<{
             </div>
           </div>
         </div>
-        <div className="flex h-24 shrink-0 flex-row items-center justify-center border-b-[6px] border-[#FFF6F3] bg-white">
+        <div className="mx-2.5 flex h-24 shrink-0 flex-row items-center justify-center border-b-[0.4px] border-[#ffa88d] bg-white text-main">
           quick categories
         </div>
         <div className="sticky top-8 z-50 flex h-16 shrink-0 flex-row items-center bg-white py-4 pl-[18px]">
@@ -205,47 +151,23 @@ export const Home: React.FC<{
             className="pt-0.5"
           />
           <div className="h-6 w-4 shrink-0 border-r-[0.5px] border-main bg-white" />
-          <div className="flex flex-row overflow-scroll pl-3 pt-4">
-            <div
-              className="mr-2.5 flex h-8 flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
-              style={{
-                color: sort === "Hot" ? "white" : main,
-                fontWeight: sort === "Hot" ? "700" : "400",
-                background: sort === "Hot" ? main : "white",
-              }}
-            >
-              Hot
-            </div>
-            <div
-              className="mr-2.5 flex h-8 flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
-              style={{
-                color: sort === "New" ? "white" : main,
-                fontWeight: sort === "New" ? "700" : "400",
-                background: sort === "New" ? main : "white",
-              }}
-            >
-              New
-            </div>
-            <div
-              className="mr-2.5 flex h-8 flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
-              style={{
-                color: sort === "Following" ? "white" : main,
-                fontWeight: sort === "Following" ? "700" : "400",
-                background: sort === "Following" ? main : "white",
-              }}
-            >
-              Following
-            </div>
-            <div
-              className="mr-2.5 flex h-8 flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
-              style={{
-                color: sort === "Best" ? "white" : main,
-                fontWeight: sort === "Best" ? "700" : "400",
-                background: sort === "Best" ? main : "white",
-              }}
-            >
-              Best
-            </div>
+          <div className="flex flex-row overflow-scroll pl-3">
+            {sortModes.map((e, i) => (
+              <div
+                key={i}
+                className="mr-2.5 cursor-pointer flex h-8 flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
+                style={{
+                  color: sort === e ? "white" : main,
+                  fontWeight: sort === e ? "700" : "400",
+                  background: sort === e ? main : "white",
+                }}
+                  onClick={() => {
+                     setSort(e)
+                  }}
+              >
+                {e}
+              </div>
+            ))}
             <div className="h-1 w-6 shrink-0" />
           </div>
         </div>
@@ -258,6 +180,6 @@ export const Home: React.FC<{
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

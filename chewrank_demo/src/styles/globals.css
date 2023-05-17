@@ -2,10 +2,12 @@
 
 * {
   font-family: "Archivo", sans-serif;
+  scrollbar-width: none;
 }
 
 *::-webkit-scrollbar {
   width: 0px;
+  height: 0px;
 }
 
 @tailwind base;
