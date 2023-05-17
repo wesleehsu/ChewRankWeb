@@ -6,6 +6,7 @@ import { ReviewLike } from "~/svgs/ReviewLike"
 import { ReviewSave } from "~/svgs/ReviewSave"
 import { ReviewShare } from "~/svgs/ReviewShare"
 import data from "../data"
+import { HomeLike } from "~/svgs/HomeLike"
 
 export const Home: React.FC<{
   setPage: React.Dispatch<React.SetStateAction<string>>;
@@ -15,8 +16,7 @@ export const Home: React.FC<{
   const reviewPreview = (e: (typeof data.hot)[0], i: number) => (
     <div
       key={i}
-      className="mb-3 w-full cursor-pointer border-2 bg-white"
-      style={{ height: e.height }}
+      className="mb-6 flex w-full cursor-pointer flex-col bg-white"
       onClick={(e) => {
         console.log(`${e.clientX - 490}px ${e.clientY - 310}px`);
         if (reviewRef.current) {
@@ -40,7 +40,38 @@ export const Home: React.FC<{
         }
       }}
     >
-      {e.title}
+      <div
+        className="relative h-full w-full shrink-0 overflow-clip rounded-xl"
+        style={{ height: e.height }}
+      >
+        <Image
+          src="/test.png"
+          alt="e.title"
+          fill={true}
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+      <div className="w-full shrink-0 px-3 pt-3 text-sm font-semibold">
+        {e.title}
+      </div>
+      <div className="flex w-full shrink-0 flex-row items-center px-3 pt-2">
+        <div className="relative h-6 w-6 shrink-0 overflow-clip rounded">
+          <Image
+            src="/test.png"
+            alt="e.title"
+            fill={true}
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+        <div className="ml-1 flex shrink-0 flex-col">
+          <div className="text-[10px] font-semibold">{e.title}</div>
+          <div className="text-[6px] opacity-50">{e.title}</div>
+        </div>
+        <div className="flex w-full flex-row justify-end h-full">
+          <HomeLike className="pt-[2px]"/>
+          <div className="text-[11px] text-main ml-1">999</div>
+        </div>
+      </div>
     </div>
   );
 
@@ -128,7 +159,7 @@ export const Home: React.FC<{
         </div>
       </div>
       <div className="relative flex h-full w-full flex-col overflow-scroll bg-white">
-        <div className="sticky top-0 ml-4 flex h-8 shrink-0 flex-row items-center bg-white">
+        <div className="sticky z-50 top-0 pl-4 flex h-8 shrink-0 flex-row items-center bg-white">
           <Image
             src="/HomeLocation.svg"
             alt="Location"
@@ -162,7 +193,7 @@ export const Home: React.FC<{
         <div className="flex h-20 shrink-0 flex-row items-center justify-center bg-white">
           quick categories
         </div>
-        <div className="sticky top-8 h-14 shrink-0 border-2 bg-white">
+        <div className="sticky top-8 h-14 shrink-0 border-2 bg-white z-50">
           filter , sort
         </div>
         <div className="m-2 flex flex-row items-start justify-center bg-white">
