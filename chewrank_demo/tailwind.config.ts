@@ -11,3 +11,5 @@ export default {
   },
   plugins: [],
 } satisfies Config;
+
+export const main = "#FF3D00"

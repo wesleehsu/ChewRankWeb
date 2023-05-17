@@ -4,6 +4,10 @@
   font-family: "Archivo", sans-serif;
 }
 
+*::-webkit-scrollbar {
+  width: 0px;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

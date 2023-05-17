@@ -1,18 +1,21 @@
-import Image from "next/image"
-import React, { useRef, useState } from "react"
-import { ReviewBack } from "~/svgs/ReviewBack"
-import { ReviewComment } from "~/svgs/ReviewComment"
-import { ReviewLike } from "~/svgs/ReviewLike"
-import { ReviewSave } from "~/svgs/ReviewSave"
-import { ReviewShare } from "~/svgs/ReviewShare"
-import data from "../data"
-import { HomeLike } from "~/svgs/HomeLike"
+import Image from "next/image";
+import React, { useRef, useState } from "react";
+import { ReviewBack } from "~/svgs/ReviewBack";
+import { ReviewComment } from "~/svgs/ReviewComment";
+import { ReviewLike } from "~/svgs/ReviewLike";
+import { ReviewSave } from "~/svgs/ReviewSave";
+import { ReviewShare } from "~/svgs/ReviewShare";
+import data from "../data";
+import { HomeLike } from "~/svgs/HomeLike";
+import { main } from "tailwind.config";
 
 export const Home: React.FC<{
   setPage: React.Dispatch<React.SetStateAction<string>>;
 }> = ({ setPage }) => {
   const [mousePos, setMousePos] = useState(["540px", "22px"]);
+  const [sort, setSort] = useState("Hot");
   const reviewRef = useRef<HTMLDivElement>(null);
+  const mainRef = useRef<HTMLDivElement>(null);
   const reviewPreview = (e: (typeof data.hot)[0], i: number) => (
     <div
       key={i}
@@ -29,10 +32,10 @@ export const Home: React.FC<{
             (e.clientY - 320).toString() + "px",
           ]);
           setTimeout(() => {
-            if (reviewRef.current) {
+            if (reviewRef.current && mainRef.current) {
               reviewRef.current.style.transitionDuration = "200ms";
-              reviewRef.current.style.left = "540px";
-              reviewRef.current.style.top = "22px";
+              reviewRef.current.style.left = mainRef.current.style.left;
+              reviewRef.current.style.top = mainRef.current.style.top;
               reviewRef.current.style.opacity = "100";
               reviewRef.current.style.transform = "scale(1)";
             }
@@ -51,11 +54,11 @@ export const Home: React.FC<{
           style={{ objectFit: "cover" }}
         />
       </div>
-      <div className="w-full shrink-0 px-3 pt-3 text-sm font-semibold">
+      <div className="w-full shrink-0 px-3 pt-2.5 text-sm font-semibold">
         {e.title}
       </div>
-      <div className="flex w-full shrink-0 flex-row items-center px-3 pt-2">
-        <div className="relative h-6 w-6 shrink-0 overflow-clip rounded">
+      <div className="flex w-full shrink-0 flex-row items-center pl-3 pr-3.5 pt-2">
+        <div className="relative h-[22px] w-[22px] shrink-0 overflow-clip rounded">
           <Image
             src="/test.png"
             alt="e.title"
@@ -63,13 +66,13 @@ export const Home: React.FC<{
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div className="ml-1 flex shrink-0 flex-col">
+        <div className="ml-1.5 flex shrink-0 flex-col">
           <div className="text-[10px] font-semibold">{e.title}</div>
           <div className="text-[6px] opacity-50">{e.title}</div>
         </div>
-        <div className="flex w-full flex-row justify-end h-full">
-          <HomeLike className="pt-[2px]"/>
-          <div className="text-[11px] text-main ml-1">999</div>
+        <div className="flex h-6 w-full flex-row items-center justify-end">
+          <HomeLike className="" />
+          <div className="ml-1.5 text-[12px] text-main">999</div>
         </div>
       </div>
     </div>
@@ -80,16 +83,16 @@ export const Home: React.FC<{
       {/* Review */}
       <div
         ref={reviewRef}
-        className="pointer-events-none absolute z-50 h-[640px] w-[360px] scale-[0.1] overflow-scroll rounded-[20px] bg-orange-500 opacity-0 ease-in-out"
+        className="pointer-events-none absolute z-[200] h-[640px] w-[360px] scale-[0.1] overflow-scroll rounded-[20px] bg-orange-500 opacity-0 ease-in-out"
         // style={{boxShadow: "0 0px 64px 36px rgb(0 0 0 / 0.9)"}}
       >
         <div className="relative h-full w-full">
-            <Image
-              src="/test.png"
-              fill={true}
-              alt="test"
-              style={{ objectFit: "cover" }}
-            />
+          <Image
+            src="/test.png"
+            fill={true}
+            alt="test"
+            style={{ objectFit: "cover" }}
+          />
           <div className="absolute top-0 z-[100] flex h-full w-full flex-col">
             <div className="h-12 w-full shrink-0 px-6">
               <div className="relative h-full w-full">
@@ -106,11 +109,11 @@ export const Home: React.FC<{
               style={{ filter: "drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.5))" }}
               onClick={() => {
                 if (reviewRef.current) {
-                  reviewRef.current.style.left = mousePos[0] || "540px";
-                  reviewRef.current.style.top = mousePos[1] || "22px";
+                  // reviewRef.current.style.left = mousePos[0] || "0px";
+                  // reviewRef.current.style.top = mousePos[1] || "0px";
                   reviewRef.current.style.pointerEvents = "none";
                   reviewRef.current.style.opacity = "0";
-                  reviewRef.current.style.transform = "scale(0.4)";
+                  reviewRef.current.style.transform = "scale(0.1)";
                 }
               }}
             >
@@ -148,7 +151,7 @@ export const Home: React.FC<{
       </div>
 
       {/* Home */}
-      <div className="h-12 w-full shrink-0 px-6">
+      <div ref={mainRef} className="h-12 w-full shrink-0 px-6">
         <div className="relative h-full w-full">
           <Image
             src="/status_bar_black.png"
@@ -159,7 +162,7 @@ export const Home: React.FC<{
         </div>
       </div>
       <div className="relative flex h-full w-full flex-col overflow-scroll bg-white">
-        <div className="sticky z-50 top-0 pl-4 flex h-8 shrink-0 flex-row items-center bg-white">
+        <div className="sticky top-0 z-50 flex h-8 shrink-0 flex-row items-center bg-white pl-4">
           <Image
             src="/HomeLocation.svg"
             alt="Location"
@@ -190,13 +193,63 @@ export const Home: React.FC<{
             </div>
           </div>
         </div>
-        <div className="flex h-20 shrink-0 flex-row items-center justify-center bg-white">
+        <div className="flex h-24 shrink-0 flex-row items-center justify-center border-b-[6px] border-[#FFF6F3] bg-white">
           quick categories
         </div>
-        <div className="sticky top-8 h-14 shrink-0 border-2 bg-white z-50">
-          filter , sort
+        <div className="sticky top-8 z-50 flex h-16 shrink-0 flex-row items-center bg-white py-4 pl-[18px]">
+          <Image
+            src="HomeFilter.svg"
+            width={22}
+            height={22}
+            alt="Filter"
+            className="pt-0.5"
+          />
+          <div className="h-6 w-4 shrink-0 border-r-[0.5px] border-main bg-white" />
+          <div className="flex flex-row overflow-scroll pl-3 pt-4">
+            <div
+              className="mr-2.5 flex h-8 flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
+              style={{
+                color: sort === "Hot" ? "white" : main,
+                fontWeight: sort === "Hot" ? "700" : "400",
+                background: sort === "Hot" ? main : "white",
+              }}
+            >
+              Hot
+            </div>
+            <div
+              className="mr-2.5 flex h-8 flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
+              style={{
+                color: sort === "New" ? "white" : main,
+                fontWeight: sort === "New" ? "700" : "400",
+                background: sort === "New" ? main : "white",
+              }}
+            >
+              New
+            </div>
+            <div
+              className="mr-2.5 flex h-8 flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
+              style={{
+                color: sort === "Following" ? "white" : main,
+                fontWeight: sort === "Following" ? "700" : "400",
+                background: sort === "Following" ? main : "white",
+              }}
+            >
+              Following
+            </div>
+            <div
+              className="mr-2.5 flex h-8 flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
+              style={{
+                color: sort === "Best" ? "white" : main,
+                fontWeight: sort === "Best" ? "700" : "400",
+                background: sort === "Best" ? main : "white",
+              }}
+            >
+              Best
+            </div>
+            <div className="h-1 w-6 shrink-0" />
+          </div>
         </div>
-        <div className="m-2 flex flex-row items-start justify-center bg-white">
+        <div className="mx-2 flex flex-row items-start justify-center bg-white">
           <div className="mr-1 flex w-full flex-col">
             {data.hot.map((e, i) => i % 2 === 0 && reviewPreview(e, i))}
           </div>

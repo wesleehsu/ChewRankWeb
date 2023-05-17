@@ -18,7 +18,7 @@ const Index: NextPage = () => {
       <div className="flex h-[720px] w-[360px] flex-col overflow-clip rounded-[20px] bg-white">
         <Home setPage={setPage} />
       </div>
-      <div className="absolute bottom-[22px] z-[200] h-20 w-[360px] rounded-b-[20px] border-t bg-white"></div>
+      <div className="absolute bottom-[22px] z-[200] h-20 w-[360px] rounded-b-[20px] border-t border-[#FFF6F3] bg-white"></div>
     </div>
   );
 };
