@@ -77,7 +77,7 @@ export const Home: React.FC<{
       <div className="flex w-full shrink-0 flex-row items-center pl-2.5 pr-3.5 pt-2">
         <div className="relative h-[22px] w-[22px] shrink-0 overflow-clip rounded">
           <Image
-            src="/test.png"
+            src="/Cindy.jpg"
             alt="e.title"
             fill={true}
             style={{ objectFit: "cover" }}

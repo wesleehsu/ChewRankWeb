@@ -29,7 +29,7 @@ export const Review: React.FC<{
     >
       <div className="relative h-[640px] w-[360px] shrink-0">
         <Image
-          src="/test.png"
+          src="/Post1.png"
           fill={true}
           alt="test"
           className="duration-200"
@@ -79,7 +79,7 @@ export const Review: React.FC<{
               >
                 <div className="relative h-11 w-11 overflow-clip rounded border border-white">
                   <Image
-                    src="/test.png"
+                    src="/Post1.png"
                     fill={true}
                     style={{ objectFit: "cover" }}
                     alt="Reviewer"
