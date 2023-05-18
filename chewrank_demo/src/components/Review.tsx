@@ -13,8 +13,8 @@ export const Review: React.FC<{
 }> = ({ page, setPage }) => {
   const mainRef = useRef<HTMLDivElement>(null);
   const [restaurant, setRestaurant] = useState(false);
-
-  let reviewData = data.hot[parseInt(page.split(' ')[1])]
+  const tempStr = page.split(' ')[1]
+  const reviewData = data.hot[parseInt(String(tempStr))]
   console.log(reviewData)
 
   return (
