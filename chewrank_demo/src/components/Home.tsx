@@ -28,7 +28,7 @@ export const Home: React.FC<{
           img.style.position = "absolute";
           img.style.left = `${mp.x - pp.x}px`;
           img.style.top = `${mp.y - pp.y}px`;
-          img.style.zIndex = "100";
+          img.style.zIndex = "200";
           img.style.width = "360px";
           img.style.height = "640px";
         }, 1);
@@ -44,7 +44,7 @@ export const Home: React.FC<{
           img.style.zIndex = "10";
           img.style.width = "168px";
           img.style.height = `${e.height}px`;
-        }, 500);
+        }, 800);
       }}
     >
       <div
@@ -61,7 +61,7 @@ export const Home: React.FC<{
         />
         <div
           id={`previewImg-${i}`}
-          className="absolute left-0 top-0 h-full w-full ease-in"
+          className="absolute left-0 top-0 h-full w-full ease-in-out"
         >
           <Image
             src={e.img}
@@ -71,7 +71,7 @@ export const Home: React.FC<{
           />
         </div>
       </div>
-      <div className="w-full shrink-0 px-3 pt-2.5 text-sm font-semibold">
+      <div className="w-full shrink-0 px-3 pt-2.5 text-xs font-semibold">
         {e.title}
       </div>
       <div className="flex w-full shrink-0 flex-row items-center pl-2.5 pr-3.5 pt-2">
@@ -97,7 +97,7 @@ export const Home: React.FC<{
 
   return (
     <div ref={mainRef} className="relative">
-      <div className="h-12 w-full shrink-0 px-6">
+      <div className="absolute z-[120] h-12 w-full shrink-0 px-6">
         <div className="relative h-full w-full">
           <Image
             src="/status_bar_black.png"
@@ -108,7 +108,7 @@ export const Home: React.FC<{
         </div>
       </div>
       <div className="flex h-[720px] w-full flex-col overflow-scroll bg-white">
-        <div className="sticky top-0 z-50 flex h-8 shrink-0 flex-row items-center bg-white pl-4">
+        <div className="sticky top-0 z-[100] flex h-20 shrink-0 flex-row items-center bg-white pl-4 pt-12">
           <Image
             src="/HomeLocation.svg"
             alt="Location"
@@ -116,7 +116,7 @@ export const Home: React.FC<{
             height={14}
             className="mt-[1px]"
           />
-          <div className="ml-[11px] mr-3 mt-[1px] shrink-0 text-xs font-extralight">
+          <div className="ml-[11px] mr-3 mt-[1px] shrink-0 text-xs font-thin">
             Los Angelas
           </div>
           <Image
@@ -132,7 +132,7 @@ export const Home: React.FC<{
               alt="Search"
               width={12}
               height={12}
-              className="mx-3"
+              className="ml-3 mr-2"
             />
             <div className="text-[10px] font-extralight text-main">
               People, places, reviews, anything
@@ -142,7 +142,7 @@ export const Home: React.FC<{
         <div className="mx-2.5 flex h-24 shrink-0 flex-row items-center justify-center border-b-[0.4px] border-[#ffa88d] bg-white text-main">
           quick categories
         </div>
-        <div className="sticky top-8 z-50 flex h-16 shrink-0 flex-row items-center bg-white py-4 pl-[18px]">
+        <div className="sticky top-20 z-[50] flex h-16 shrink-0 flex-row items-center bg-white py-4 pl-[18px]">
           <Image
             src="HomeFilter.svg"
             width={22}
@@ -155,15 +155,15 @@ export const Home: React.FC<{
             {sortModes.map((e, i) => (
               <div
                 key={i}
-                className="mr-2.5 cursor-pointer flex h-8 flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
+                className="mr-2.5 flex h-8 cursor-pointer flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
                 style={{
                   color: sort === e ? "white" : main,
                   fontWeight: sort === e ? "700" : "400",
                   background: sort === e ? main : "white",
                 }}
-                  onClick={() => {
-                     setSort(e)
-                  }}
+                onClick={() => {
+                  setSort(e);
+                }}
               >
                 {e}
               </div>
