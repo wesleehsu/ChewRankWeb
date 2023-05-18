@@ -7,7 +7,7 @@ import { Review } from "~/components/Review"
 const Index: NextPage = () => {
   const [page, setPage] = useState<string>("Home");
   useEffect(() => {
-    console.log();
+    // console.log("Hello world");
   }, []);
 
   return (
@@ -16,7 +16,7 @@ const Index: NextPage = () => {
         <title>ChewRank Demo</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <div className="relative flex h-[720px] w-[360px] flex-col overflow-clip rounded-[20px] bg-white">
+      <div id = "target" className="relative flex h-[720px] w-[360px] flex-col overflow-clip rounded-[20px] bg-white">
         
         <Review page={page} setPage={setPage} />
         <Home setPage={setPage} />

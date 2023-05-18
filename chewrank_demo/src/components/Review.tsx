@@ -5,6 +5,7 @@ import { ReviewComment } from "~/svgs/ReviewComment"
 import { ReviewLike } from "~/svgs/ReviewLike"
 import { ReviewSave } from "~/svgs/ReviewSave"
 import { ReviewShare } from "~/svgs/ReviewShare"
+import data from "../data"
 
 export const Review: React.FC<{
   page: string;
@@ -12,6 +13,9 @@ export const Review: React.FC<{
 }> = ({ page, setPage }) => {
   const mainRef = useRef<HTMLDivElement>(null);
   const [restaurant, setRestaurant] = useState(false);
+
+  let reviewData = data.hot[parseInt(page.split(' ')[1])]
+  console.log(reviewData)
 
   return (
     <div

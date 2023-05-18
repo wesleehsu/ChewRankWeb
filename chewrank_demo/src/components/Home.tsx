@@ -33,7 +33,7 @@ export const Home: React.FC<{
           img.style.height = "640px";
         }, 1);
         setTimeout(() => {
-          setPage("Review:" + i.toString());
+          setPage("Review" + " " + i.toString());
         }, 100);
         setTimeout(() => {
           if (img.parentElement) img.parentElement.style.overflow = "clip";
@@ -54,7 +54,7 @@ export const Home: React.FC<{
         }}
       >
         <Image
-          src="/test.png"
+          src={e.img}
           alt="e.title"
           fill={true}
           style={{ objectFit: "cover" }}
@@ -64,7 +64,7 @@ export const Home: React.FC<{
           className="absolute left-0 top-0 h-full w-full ease-in"
         >
           <Image
-            src="/test.png"
+            src={e.img}
             alt="e.title"
             fill={true}
             style={{ objectFit: "cover" }}
@@ -84,12 +84,12 @@ export const Home: React.FC<{
           />
         </div>
         <div className="ml-1.5 flex shrink-0 flex-col">
-          <div className="text-[10px] font-semibold">{e.title}</div>
-          <div className="text-[6px] opacity-50">{e.title}</div>
+          <div className="text-[10px] font-semibold">{e.accountName}</div>
+          <div className="text-[6px] opacity-50">{e.followingFlag? "Following" : "Follow"}</div>
         </div>
         <div className="flex h-6 w-full flex-row items-center justify-end">
           <HomeLike className="" />
-          <div className="ml-1.5 text-[12px] text-main">999</div>
+          <div className="ml-1.5 text-[12px] text-main">{e.likesNum}</div>
         </div>
       </div>
     </div>
