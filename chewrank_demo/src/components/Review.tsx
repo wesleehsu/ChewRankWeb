@@ -5,7 +5,7 @@ import { ReviewComment } from "~/svgs/ReviewComment"
 import { ReviewLike } from "~/svgs/ReviewLike"
 import { ReviewSave } from "~/svgs/ReviewSave"
 import { ReviewShare } from "~/svgs/ReviewShare"
-import data from "../data"
+import data from "../data";
 
 export const Review: React.FC<{
   page: string;
@@ -113,17 +113,37 @@ export const Review: React.FC<{
           </div>
         </div>
         <div
-          className="absolute z-[150] flex h-12 cursor-pointer flex-row items-center rounded-full bg-white px-4 duration-300"
+          className="duration-[360ms] absolute z-[500] flex cursor-pointer flex-row items-center bg-white px-4"
           style={{
             filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.3))",
             width: restaurant ? "360px" : "284px",
             left: restaurant ? "0px" : "16px",
-            bottom: restaurant ? "600px" : "18px",
+            bottom: restaurant ? "540px" : "18px",
+            borderRadius: restaurant ? "0px" : "999px",
+            height: restaurant ? "100px" : "48px",
           }}
           onClick={() => {
             setRestaurant((p) => !p);
+            setPage((p) =>
+              /Restaurant/.test(p)
+                ? p.substring(0, p.length - 11)
+                : p + ":Restaurant"
+            );
           }}
         >
+          <div className="absolute left-0 top-0 z-[700] h-12 w-full shrink-0 px-6">
+            <div className="relative h-full w-full">
+              <Image
+                src="/status_bar_black.png"
+                fill={true}
+                alt="status bar"
+                style={{
+                  objectFit: "contain",
+                  opacity: restaurant ? 1 : 0,
+                }}
+              />
+            </div>
+          </div>
           <Image
             src="/ReviewRestaurantExpand.svg"
             width={14}
@@ -131,12 +151,13 @@ export const Review: React.FC<{
             alt="See Restaurant"
             className="shrink-0 duration-0"
             style={{
-              transform: restaurant ? "rotate(180deg)" : "",
-              paddingBottom: restaurant ? "12px" : "1px",
+              transform: restaurant ? "rotate(180deg) scale(3)" : "",
+              paddingBottom: restaurant ? "8px" : "1px",
+              paddingRight: restaurant ? "8px" : "0px",
             }}
           />
           <div
-            className="mx-4 flex shrink-0 flex-col leading-4 duration-0"
+            className="mx-4 mt-[1px] flex shrink-0 flex-col leading-4 duration-0"
             style={{
               visibility: restaurant ? "hidden" : "visible",
             }}
