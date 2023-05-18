@@ -29,7 +29,7 @@ export const Review: React.FC<{
     >
       <div className="relative h-[640px] w-[360px] shrink-0">
         <Image
-          src="/Post1.png"
+          src={reviewData?.img || "/Post1.png"}
           fill={true}
           alt="test"
           className="duration-200"
