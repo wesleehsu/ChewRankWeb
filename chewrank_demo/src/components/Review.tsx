@@ -54,7 +54,7 @@ export const Review: React.FC<{
         // style={{boxShadow: "0 0px 64px 36px rgb(0 0 0 / 0.9)"}}
       >
         <div className="relative h-[640px] w-[360px] shrink-0">
-            {(reviewData?.height || 150) < 200 ? <Image
+            {(reviewData?.imgFlag) == true ? <Image
             src={reviewData?.img || "/Post1.mp4"}
             alt={reviewData?.title || "" }
             fill={true}
@@ -63,8 +63,9 @@ export const Review: React.FC<{
             autoPlay
             muted
             loop
-            src={reviewData?.img || "/Post1.mp4"}
-            />}
+            src="/Post2/Post.mp4"
+            />
+            }
           {/* <Image
             src={reviewData?.img || "/Post1.png"}
             fill={true}
@@ -106,21 +107,21 @@ export const Review: React.FC<{
                 >
                   <div className="relative h-11 w-11 overflow-clip rounded border border-white">
                     <Image
-                      src="/Post1.png"
+                      src={reviewData?.accountPic || "/Cindy.jpg"}
                       fill={true}
                       style={{ objectFit: "cover" }}
                       alt="Reviewer"
                     />
                   </div>
                   <div className="ml-2.5 flex shrink-0 flex-col text-white">
-                    <div className="text-[16px] font-extrabold">kjhgfd</div>
-                    <div className="text-[10px] font-bold opacity-70">
-                      following
+                    <div className="text-[16px] font-extrabold">{reviewData?.accountName}</div>
+                    <div className="text-[12px] font-bold opacity-70">
+                      {reviewData?.followingFlag == true ? "Following" : "Follow"}
                     </div>
                   </div>
                 </div>
                 <div className="mb-[64px] text-xs font-semibold text-white">
-                  jhgfcvhbjnkl kjhg jkhgfdkjh jhgf
+                  {reviewData?.description}
                 </div>
               </div>
               <div
@@ -130,11 +131,11 @@ export const Review: React.FC<{
                 }}
               >
                 <ReviewLike className="mb-2 w-[26px]" />
-                <div className="mb-5 text-xs font-medium text-white">999</div>
+                <div className="mb-5 text-xs font-medium text-white">{((reviewData?.likesNum || 255) > 1000 ?  ((reviewData?.likesNum || 255) / 1000).toFixed(1) + "k" : reviewData?.likesNum)}</div>
                 <ReviewSave className="mb-2 w-[22px]" />
-                <div className="mb-5 text-xs font-medium text-white">999</div>
+                <div className="mb-5 text-xs font-medium text-white">{((reviewData?.commentNum || 255) > 1000 ?  ((reviewData?.commentNum || 255) / 1000).toFixed(1) + "k" : reviewData?.commentNum)}</div>
                 <ReviewComment className="mb-2 w-6" />
-                <div className="mb-5 text-xs font-medium text-white">999</div>
+                <div className="mb-5 text-xs font-medium text-white">{((reviewData?.collectionNum || 255) > 1000 ?  ((reviewData?.collectionNum || 255) / 1000).toFixed(1) + "k" : reviewData?.collectionNum)}</div>
                 <ReviewShare className="mb-2.5 w-6" />
               </div>
             </div>
@@ -178,8 +179,8 @@ export const Review: React.FC<{
                 visibility: restaurant ? "hidden" : "visible",
               }}
             >
-              <div className="text-[15px] font-black">Resttttaurant</div>
-              <div className="flex flex-row text-[9px] font-bold opacity-50">
+              <div className="text-[13px] font-black">{reviewData?.restaurantName}</div>
+              <div className="flex flex-row text-[10px] font-bold opacity-50">
                 <div>Café</div>
                 <div className="mx-1">•</div>
                 <div>8.8</div>
@@ -199,8 +200,8 @@ export const Review: React.FC<{
                 alt="Restaurant Rating"
                 className="pb-[3px]"
               />
-              <div className="ml-2 text-sm font-black text-main">4.3</div>
-              <div className="ml-1 text-sm text-main">(677)</div>
+              <div className="ml-2 text-sm font-black text-main">{reviewData?.reviewRank}</div>
+              <div className="ml-1 text-sm text-main">({reviewData?.reviewNum})</div>
             </div>
           </div>
         </div>

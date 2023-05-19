@@ -54,7 +54,7 @@ export const Home: React.FC<{
           height: `${e.height}px`,
         }}
       >
-        {e.height < 200 ? <Image
+        {e.imgFlag == true ? <Image
           src={e.img}
           alt="e.title"
           fill={true}
@@ -63,6 +63,8 @@ export const Home: React.FC<{
           autoPlay
           muted
           loop
+        //   webkit-playsinline
+        //   playsInline
           src={e.img}
         />
 }
@@ -81,21 +83,19 @@ export const Home: React.FC<{
       <div className="flex w-full shrink-0 flex-row items-center pl-2.5 pr-3.5 pt-2">
         <div className="relative h-[22px] w-[22px] shrink-0 overflow-clip rounded">
           <Image
-            src="/Cindy.jpg"
-            alt="e.title"
+            src={e.accountPic}
+            alt={e.title}
             fill={true}
             style={{ objectFit: "cover" }}
           />
         </div>
         <div className="ml-1.5 flex shrink-0 flex-col">
           <div className="text-[10px] font-semibold">{e.accountName}</div>
-          <div className="text-[6px] opacity-50">
-            {e.followingFlag ? "Following" : "Follow"}
-          </div>
+          <div className="text-[8px] opacity-50">{e.followingFlag? "Following" : "Follow"}</div>
         </div>
         <div className="flex h-6 w-full flex-row items-center justify-end">
           <HomeLike className="" />
-          <div className="ml-1.5 text-[12px] text-main">{e.likesNum}</div>
+          <div className="ml-1.5 text-[12px] text-main">{((e.likesNum || 255) > 1000 ? ((e.likesNum || 255) / 1000).toFixed(1) + "k" : e.likesNum)}</div>
         </div>
       </div>
     </div>
