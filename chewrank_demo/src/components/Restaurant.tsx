@@ -21,14 +21,6 @@ export const Restaurant: React.FC<{
     "sexy",
     "big",
     "vegetarian",
-    "big",
-    "sexy",
-    "big",
-    "sexy",
-    "vegetarian-friendly",
-    "vegetarian",
-    "big",
-    "sexy",
   ];
 
   return (
@@ -83,15 +75,15 @@ export const Restaurant: React.FC<{
               </div>
             </div>
           </div>
-          <div className="mr-6 flex grow flex-col items-center self-center">
+          <div className="mr-6 flex shrink-0 flex-col items-center self-center">
             <Image
               src="/RestaurantReview.png"
-              width={50}
-              height={50}
+              width={48}
+              height={48}
               alt="Review"
             />
             {/* <div className="mt-1 pb-4 text-[80px] leading-8 text-main">+</div> */}
-            <div className="mt-1 px-2 py-1 text-xs text-main">Review</div>
+            {/* <div className="mt-1 px-2 py-1 text-xs text-main">Review</div> */}
           </div>
           <div className="mr-6 flex w-8 shrink-0 flex-col items-center">
             <RestaurantSave className="mb-0.5 w-5" />
@@ -102,7 +94,7 @@ export const Restaurant: React.FC<{
             </div>
           </div>
         </div>
-        <div className="h-24"></div>
+        <div className="h-20"></div>
         <div className="overflow-scroll">
           <div className="relative flex h-11 w-[480px] flex-row">
             <div
@@ -144,76 +136,80 @@ export const Restaurant: React.FC<{
         </div>
         <div className="mx-6 my-6">
           <div className="flex flex-col">
-            <div className="mb-3 flex flex-row justify-between">
-              <div className="flex w-24 cursor-pointer flex-col items-center rounded-lg bg-[#fff8f5]">
+            <div className="mb-5 flex flex-row justify-around w-full">
+              <div className="relative w-14 flex shrink-0 cursor-pointer flex-col items-center">
                 <Image
-                  src="RestaurantHours.png"
-                  width={26}
-                  height={26}
+                  src="/RestaurantHours.svg"
+                  width={24}
+                  height={24}
                   alt="Hours"
-                  className="mb-3 px-8"
+                  className="my-1 shrink-0"
                 />
                 <div className="py-1 text-sm text-main">Hours</div>
               </div>
-              <div className="flex w-24 cursor-pointer flex-col items-center rounded-lg bg-[#fff8f5]">
+              <div className="h-8 border-l-[0.4px] border-[#ffa88d]" />
+              <div className="relative w-14 flex shrink-0 cursor-pointer flex-col items-center">
                 <Image
-                  src="RestaurantCall.png"
-                  width={26}
-                  height={26}
+                  src="/RestaurantCall.svg"
+                  width={24}
+                  height={24}
                   alt="Call"
-                  className="mb-3 border-x-[0.4px] border-main px-8"
+                  className="mb-1 shrink-0"
                 />
                 <div className="py-1 text-sm text-main">Call</div>
               </div>
-              <div className="flex w-24 cursor-pointer flex-col items-center rounded-lg bg-[#fff8f5]">
+              <div className="h-8 border-l-[0.4px] border-[#ffa88d]" />
+              <div className="relative w-14 flex shrink-0 cursor-pointer flex-col items-center">
                 <Image
-                  src="RestaurantLinks.png"
-                  width={26}
-                  height={26}
+                  src="/RestaurantLinks.svg"
+                  width={24}
+                  height={24}
                   alt="Links"
-                  className="mb-3 px-8"
+                  className="mb-1 shrink-0"
                 />
                 <div className="py-1 text-sm text-main">Links</div>
               </div>
             </div>
-            <div className="flex flex-row justify-between">
-              <div className="flex w-24 cursor-pointer flex-col items-center rounded-lg bg-[#fff8f5]">
+            <div className="flex flex-row justify-around w-full">
+              <div className="relative w-14 flex shrink-0 cursor-pointer flex-col items-center">
                 <Image
-                  src="RestaurantReserve.png"
-                  width={26}
-                  height={26}
+                  src="/RestaurantReserve.svg"
+                  width={24}
+                  height={24}
                   alt="Reserve"
-                  className="mb-3 px-8"
+                  className="mb-1 shrink-0"
                 />
                 <div className="py-1 text-sm text-main">Reserve</div>
               </div>
-              <div className="flex w-24 cursor-pointer flex-col items-center rounded-lg bg-[#fff8f5]">
+              <div className="h-8 border-l-[0.4px] border-[#ffa88d]" />
+              <div className="relative w-14 flex shrink-0 cursor-pointer flex-col items-center">
                 <Image
-                  src="RestaurantOrder.png"
-                  width={26}
-                  height={26}
+                  src="/RestaurantOrder.svg"
+                  width={24}
+                  height={24}
                   alt="Order"
-                  className="mb-3 border-x-[0.4px] border-main px-8"
+                  className="mb-1 shrink-0"
                 />
                 <div className="py-1 text-sm text-main">Order</div>
               </div>
-              <div className="flex w-24 cursor-pointer flex-col items-center rounded-lg bg-[#fff8f5]">
+              <div className="h-8 border-l-[0.4px] border-[#ffa88d]" />
+              <div className="relative w-14 flex shrink-0 cursor-pointer flex-col items-center">
                 <Image
-                  src="RestaurantDelivery.png"
-                  width={26}
-                  height={26}
+                  src="/RestaurantDelivery.svg"
+                  width={24}
+                  height={24}
                   alt="Delivery"
-                  className="mb-3 px-8"
+                  className="mb-1 shrink-0"
                 />
                 <div className="py-1 text-sm text-main">Delivery</div>
               </div>
             </div>
-            <div className="mt-8 flex flex-col">
-              <div className="w-[30%] flex-col self-center border-t-[0.4px] border-[#ffa88d] pt-6"></div>
+            <div className="mt-5 flex flex-col">
+              <div className="w-[60%] flex-col self-center border-t-[0.4px] border-[#ffa88d] pt-6"></div>
               {/* <div className="mt-6 flex flex-col border-t-[0.4px] border-[#ffa88d] pt-6"> */}
               <div className="flex flex-row items-baseline">
                 <Image
-                  src="RestaurantDrive.svg"
+                  src="/RestaurantDrive.svg"
                   alt="Drive"
                   width={20}
                   height={20}
@@ -228,25 +224,25 @@ export const Restaurant: React.FC<{
               </div>
               <div className="relative mb-8 h-48 cursor-pointer overflow-clip rounded-lg">
                 <Image
-                  src="RestaurantMap.png"
+                  src="/RestaurantMap.png"
                   alt="Map"
                   fill={true}
                   style={{ objectFit: "cover" }}
                 />
               </div>
             </div>
-            <div className="mb-6 w-[30%] flex-col self-center border-t-[0.4px] border-[#ffa88d]"></div>
+            <div className="mb-6 w-[60%] flex-col self-center border-t-[0.4px] border-[#ffa88d]"></div>
             <div className="mb-8 flex w-full flex-row flex-wrap">
               {labels.map((e, i) => (
                 <div
                   key={i}
-                  className="my-1 mr-3 flex cursor-pointer flex-row items-center justify-center break-normal rounded-full border-[0.5px] border-main bg-main px-5 py-1 text-[13px] text-white"
+                  className="my-1.5 mr-3 flex cursor-pointer flex-row items-center justify-center break-normal rounded-full border-[0.5px] border-main bg-main px-5 py-1 text-[13px] text-white"
                 >
                   {e}
                 </div>
               ))}
             </div>
-            <div className="mb-36 w-[30%] flex-col self-center border-t-[0.4px] border-[#ffa88d] pt-6"></div>
+            <div className="mb-36 w-[60%] flex-col self-center border-t-[0.4px] border-[#ffa88d] pt-6"></div>
           </div>
         </div>
       </div>

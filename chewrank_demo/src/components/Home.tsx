@@ -1,13 +1,13 @@
-import Image from "next/image"
-import React, { useRef, useState } from "react"
-import { main } from "tailwind.config"
-import { HomeLike } from "~/svgs/HomeLike"
-import data from "../data"
+import Image from "next/image";
+import React, { useRef, useState } from "react";
+import { main } from "tailwind.config";
+import { HomeLike } from "~/svgs/HomeLike";
+import data from "../data";
 
 export const Home: React.FC<{
   setPage: React.Dispatch<React.SetStateAction<string>>;
 }> = ({ setPage }) => {
-  const currentSort = ""
+  const currentSort = "";
   const [sort, setSort] = useState("Hot");
   const mainRef = useRef<HTMLDivElement>(null);
   const sortModes = ["Hot", "New", "Following", "Best"];
@@ -54,28 +54,32 @@ export const Home: React.FC<{
           height: `${e.height}px`,
         }}
       >
-        {e.imgFlag == true ? <Image
-          src={e.img}
-          alt="e.title"
-          fill={true}
-          style={{ objectFit: "cover" }}
-        /> : <video 
-          autoPlay
-          muted
-          loop
-        //   webkit-playsinline
-          playsInline
-          src={e.img}
-        />
-}
-        {<div
-          id={`previewImg-${i}`}
-          className="absolute left-0 top-0 h-full w-full ease-in-out"
-          style={{
-            height: `${e.height}px`,
-          }}
-        >
-        </div>}
+        {e.imgFlag == true ? (
+          <Image
+            src={e.img}
+            alt="e.title"
+            fill={true}
+            style={{ objectFit: "cover" }}
+          />
+        ) : (
+          <video
+            autoPlay
+            muted
+            loop
+            //   webkit-playsinline
+            playsInline
+            src={e.img}
+          />
+        )}
+        {
+          <div
+            id={`previewImg-${i}`}
+            className="absolute left-0 top-0 h-full w-full ease-in-out"
+            style={{
+              height: `${e.height}px`,
+            }}
+          ></div>
+        }
       </div>
       <div className="w-full shrink-0 px-3 pt-2.5 text-xs font-semibold">
         {e.title}
@@ -91,11 +95,17 @@ export const Home: React.FC<{
         </div>
         <div className="ml-1.5 flex shrink-0 flex-col">
           <div className="text-[10px] font-semibold">{e.accountName}</div>
-          <div className="text-[8px] opacity-50">{e.followingFlag? "Following" : "Follow"}</div>
+          <div className="text-[8px] opacity-50">
+            {e.followingFlag ? "Following" : "Follow"}
+          </div>
         </div>
         <div className="flex h-6 w-full flex-row items-center justify-end">
           <HomeLike className="" />
-          <div className="ml-1.5 text-[12px] text-main">{((e.likesNum || 255) > 1000 ? ((e.likesNum || 255) / 1000).toFixed(1) + "k" : e.likesNum)}</div>
+          <div className="ml-1.5 text-[12px] text-main">
+            {(e.likesNum || 255) > 1000
+              ? ((e.likesNum || 255) / 1000).toFixed(1) + "k"
+              : e.likesNum}
+          </div>
         </div>
       </div>
     </div>
@@ -145,10 +155,18 @@ export const Home: React.FC<{
             </div>
           </div>
         </div>
-        <div className="mx-2.5 flex h-24 shrink-0 flex-row items-center justify-center border-b-[0.4px] border-[#ffa88d] bg-white text-main">
-          quick categories
+        <div className="mx-3 flex h-24 shrink-0 flex-row items-center justify-start border-b-[0.4px] border-[#ffa88d] bg-white text-main">
+          <div className="ml-[8px] flex cursor-pointer flex-col items-center">
+            <Image
+              src="/HomeQuickFilter1.png"
+              width={48}
+              height={48}
+              alt="Korean Food"
+            />
+            <div className="mt-1 text-xs font-bold text-main">Korean</div>
+          </div>
         </div>
-        <div className="sticky top-20 z-[50] flex h-16 shrink-0 flex-row items-center bg-white py-4 pl-[18px]">
+        <div className="sticky top-20 z-[50] flex h-[72px] shrink-0 flex-row items-center bg-white py-4 pl-[26px]">
           <Image
             src="HomeFilter.svg"
             width={22}
@@ -161,7 +179,7 @@ export const Home: React.FC<{
             {sortModes.map((e, i) => (
               <div
                 key={i}
-                className="mr-2.5 flex h-8 cursor-pointer flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
+                className="my-2 mr-2.5 flex h-8 cursor-pointer flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
                 style={{
                   color: sort === e ? "white" : main,
                   fontWeight: sort === e ? "700" : "400",
@@ -178,13 +196,20 @@ export const Home: React.FC<{
             <div className="h-1 w-6 shrink-0" />
           </div>
         </div>
-        <div className="mx-2 flex flex-row items-start justify-center bg-white">
+        <div className="mx-2 mb-12 flex flex-row items-start justify-center bg-white">
           <div className="mr-1 flex w-full flex-col">
-            {data.hot.map((e, i) => (i % 2 === 0 && e.feature == sort) && reviewPreview(e, i))}
+            {data.hot.map(
+              (e, i) => i % 2 === 0 && e.feature == sort && reviewPreview(e, i)
+            )}
           </div>
           <div className="ml-1 flex w-full flex-col">
-            {data.hot.map((e, i) => (i % 2 === 1 && e.feature == sort) && reviewPreview(e, i))}
+            {data.hot.map(
+              (e, i) => i % 2 === 1 && e.feature == sort && reviewPreview(e, i)
+            )}
           </div>
+        </div>
+        <div className="mb-48 self-center text-sm text-main opacity-60">
+          More will be coming very soon!
         </div>
       </div>
     </div>

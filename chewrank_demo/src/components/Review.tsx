@@ -147,9 +147,9 @@ export const Review: React.FC<{
               filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.3))",
               width: restaurant ? "360px" : "284px",
               left: restaurant ? "0px" : "16px",
-              bottom: restaurant ? "0px" : "18px",
+              bottom: restaurant ? "-38px" : "18px",
               borderRadius: restaurant ? "24px" : "24px",
-              height: restaurant ? "640px" : "48px",
+              height: restaurant ? "680px" : "48px",
             }}
             onClick={() => {
               setRestaurant((p) => !p);
