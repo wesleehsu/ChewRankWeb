@@ -64,7 +64,7 @@ export const Home: React.FC<{
           muted
           loop
         //   webkit-playsinline
-        //   playsInline
+          playsInline
           src={e.img}
         />
 }

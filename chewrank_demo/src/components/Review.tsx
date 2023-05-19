@@ -63,6 +63,7 @@ export const Review: React.FC<{
             autoPlay
             muted
             loop
+            playsInline
             src={reviewData?.img || "/Post2/Post.mp4"}
             />
             }
