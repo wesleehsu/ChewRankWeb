@@ -14,7 +14,7 @@ export const ReviewBack = (props: any) => (
         height="24"
         transform="matrix(-1 -8.74228e-08 -8.74228e-08 1 36 10)"
         fill="url(#pattern0)"
-        shape-rendering="crispEdges"
+        shapeRendering="crispEdges"
       />
     </g>
     <defs>

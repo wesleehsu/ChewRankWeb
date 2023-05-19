@@ -7,6 +7,7 @@ import data from "../data"
 export const Home: React.FC<{
   setPage: React.Dispatch<React.SetStateAction<string>>;
 }> = ({ setPage }) => {
+  const currentSort = ""
   const [sort, setSort] = useState("Hot");
   const mainRef = useRef<HTMLDivElement>(null);
   const sortModes = ["Hot", "New", "Following", "Best"];
@@ -173,10 +174,10 @@ export const Home: React.FC<{
         </div>
         <div className="mx-2 flex flex-row items-start justify-center bg-white">
           <div className="mr-1 flex w-full flex-col">
-            {data.hot.map((e, i) => i % 2 === 0 && reviewPreview(e, i))}
+            {data.hot.map((e, i) => (i % 2 === 0 && e.feature == sort) && reviewPreview(e, i))}
           </div>
           <div className="ml-1 flex w-full flex-col">
-            {data.hot.map((e, i) => i % 2 === 1 && reviewPreview(e, i))}
+            {data.hot.map((e, i) => (i % 2 === 1 && e.feature == sort) && reviewPreview(e, i))}
           </div>
         </div>
       </div>
