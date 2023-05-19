@@ -10,6 +10,7 @@ import data from "../data";
 export const Review: React.FC<{
   page: string;
   setPage: React.Dispatch<React.SetStateAction<string>>;
+  setComing: React.Dispatch<React.SetStateAction<number[]>>;
 }> = ({ page, setPage }) => {
   const mainRef = useRef<HTMLDivElement>(null);
   const [restaurant, setRestaurant] = useState(false);
@@ -84,7 +85,8 @@ export const Review: React.FC<{
             <div
               className="font-xl relative ml-6 mt-12 h-16 w-16 cursor-pointer text-white"
               style={{ filter: "drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.8))" }}
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation()
                 if (!mainRef.current) return;
                 mainRef.current.style.transform = "translateX(400px)";
                 setTimeout(() => {
@@ -96,7 +98,7 @@ export const Review: React.FC<{
                 }, 300);
               }}
             >
-              <ReviewBack className="w-8 h-8 p-2" />
+              <ReviewBack className="h-8 w-8 p-2" />
             </div>
             <div className="flex h-full w-full flex-row p-4 duration-[200ms]">
               <div
@@ -171,9 +173,10 @@ export const Review: React.FC<{
               borderRadius: restaurant ? "24px" : "24px",
               height: restaurant ? "680px" : "48px",
             }}
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation()
               setRestaurant((p) => !p);
-            //   console.log(page.substring(0, page.length - 11));
+              //   console.log(page.substring(0, page.length - 11));
               setPage((p) =>
                 /Restaurant/.test(p)
                   ? p.substring(0, p.length - 11)

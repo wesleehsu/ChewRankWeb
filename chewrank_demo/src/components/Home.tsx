@@ -6,7 +6,8 @@ import data from "../data";
 
 export const Home: React.FC<{
   setPage: React.Dispatch<React.SetStateAction<string>>;
-}> = ({ setPage }) => {
+  setComing: React.Dispatch<React.SetStateAction<number[]>>;
+}> = ({ setPage, setComing }) => {
   const currentSort = "";
   const [sort, setSort] = useState("Hot");
   const mainRef = useRef<HTMLDivElement>(null);
@@ -142,7 +143,13 @@ export const Home: React.FC<{
         </div>
       </div>
       <div className="flex h-[720px] w-full flex-col overflow-y-scroll bg-white">
-        <div className="sticky top-0 z-[100] flex h-20 shrink-0 flex-row items-center bg-white pl-4 pt-12">
+        <div
+          className="sticky top-0 z-[100] flex h-20 shrink-0 flex-row items-center bg-white pl-4 pt-12"
+          onClick={(e) => {
+            e.stopPropagation();
+            setComing((p) => (p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]));
+          }}
+        >
           <Image
             src="/HomeLocation.svg"
             alt="Location"
@@ -173,19 +180,25 @@ export const Home: React.FC<{
             </div>
           </div>
         </div>
-        <div className="my-1 flex h-24 w-full shrink-0 flex-row items-center justify-start overflow-scroll border-b-[0.4px] border-[#ffa88d] bg-white px-3 text-main">
+        <div
+          className="my-1 flex h-24 w-full shrink-0 flex-row items-center justify-start overflow-scroll border-b-[0.4px] border-[#ffa88d] bg-white px-3 text-main"
+          onClick={(e) => {
+            e.stopPropagation();
+            setComing((p) => (p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]));
+          }}
+        >
           <div className="flex shrink-0 cursor-pointer flex-row items-center pr-5">
             <div className="ml-[12px] flex cursor-pointer flex-col items-center">
               <div className="m-[0px] border-[0.4px] border-main">
-              <div className="m-[5px] border-[0.4px] border-main">
-                <Image
-                  src="/HomeQuickFilter0.png"
-                  width={30}
-                  height={30}
-                  alt="Korean Food"
-                  className="m-[5px]"
-                />
-              </div>
+                <div className="m-[5px] border-[0.4px] border-main">
+                  <Image
+                    src="/HomeQuickFilter0.png"
+                    width={30}
+                    height={30}
+                    alt="Korean Food"
+                    className="m-[5px]"
+                  />
+                </div>
               </div>
               <div className="mt-2 text-xs font-bold text-main">Get Now!</div>
             </div>
@@ -239,6 +252,10 @@ export const Home: React.FC<{
             height={22}
             alt="Filter"
             className="pt-0.5"
+            onClick={(e) => {
+              e.stopPropagation();
+              setComing((p) => (p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]));
+            }}
           />
           <div className="h-6 w-4 shrink-0 border-r-[0.5px] border-main bg-white" />
           <div className="flex flex-row overflow-scroll pl-3">
