@@ -36,7 +36,7 @@ export const Home: React.FC<{
         }, 1);
         setTimeout(() => {
           setPage("Review" + " " + i.toString());
-        }, 100);
+        }, 50);
         setTimeout(() => {
           if (img.parentElement) img.parentElement.style.overflow = "clip";
           img.style.transitionDuration = "0ms";
@@ -90,7 +90,9 @@ export const Home: React.FC<{
         </div>
         <div className="ml-1.5 flex shrink-0 flex-col">
           <div className="text-[10px] font-semibold">{e.accountName}</div>
-          <div className="text-[6px] opacity-50">{e.followingFlag? "Following" : "Follow"}</div>
+          <div className="text-[6px] opacity-50">
+            {e.followingFlag ? "Following" : "Follow"}
+          </div>
         </div>
         <div className="flex h-6 w-full flex-row items-center justify-end">
           <HomeLike className="" />
@@ -102,7 +104,7 @@ export const Home: React.FC<{
 
   return (
     <div ref={mainRef} className="relative">
-      <div className="absolute z-[120] h-12 w-full shrink-0 px-6">
+      <div className="absolute z-[110] h-12 w-full shrink-0 px-6">
         <div className="relative h-full w-full">
           <Image
             src="/status_bar_black.png"
@@ -166,7 +168,8 @@ export const Home: React.FC<{
                   fontWeight: sort === e ? "700" : "400",
                   background: sort === e ? main : "white",
                 }}
-                onClick={() => {
+                onClick={(e_1) => {
+                  // e_1.currentTarget.scrollIntoView();
                   setSort(e);
                 }}
               >

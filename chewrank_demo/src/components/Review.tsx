@@ -50,7 +50,7 @@ export const Review: React.FC<{
       </div>
       <div
         ref={mainRef}
-        className="absolute z-[210] flex h-[640px] w-[360px] flex-col overflow-scroll rounded-t-[20px] duration-200 ease-in-out"
+        className="absolute z-[210] flex h-[640px] w-[360px] flex-col overflow-scroll rounded-t-[20px] duration-300 ease-in-out"
         // style={{boxShadow: "0 0px 64px 36px rgb(0 0 0 / 0.9)"}}
       >
         <div className="relative h-[640px] w-[360px] shrink-0">
@@ -145,9 +145,9 @@ export const Review: React.FC<{
               filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.3))",
               width: restaurant ? "360px" : "284px",
               left: restaurant ? "0px" : "16px",
-              bottom: restaurant ? "540px" : "18px",
-              borderRadius: restaurant ? "0px" : "999px",
-              height: restaurant ? "100px" : "48px",
+              bottom: restaurant ? "0px" : "18px",
+              borderRadius: restaurant ? "0px" : "24px",
+              height: restaurant ? "640px" : "48px",
             }}
             onClick={() => {
               setRestaurant((p) => !p);
@@ -167,18 +167,19 @@ export const Review: React.FC<{
               className="shrink-0 duration-0"
               style={{
                 transform: restaurant ? "rotate(180deg) scale(3)" : "",
-                paddingBottom: restaurant ? "8px" : "1px",
+                paddingBottom: restaurant ? "28px" : "1px",
                 paddingRight: restaurant ? "8px" : "0px",
+                alignSelf: restaurant ? "start" : "center",
               }}
             />
             <div
-              className="mx-4 mt-[1px] flex shrink-0 flex-col leading-4 duration-0"
+              className="mx-4 mt-[2px] flex shrink-0 flex-col leading-[15px] duration-0"
               style={{
                 visibility: restaurant ? "hidden" : "visible",
               }}
             >
-              <div className="text-[16px] font-black">Resttttaurant</div>
-              <div className="flex flex-row text-[10px] font-bold opacity-50">
+              <div className="text-[15px] font-black">Resttttaurant</div>
+              <div className="flex flex-row text-[9px] font-bold opacity-50">
                 <div>Café</div>
                 <div className="mx-1">•</div>
                 <div>8.8</div>
@@ -192,14 +193,14 @@ export const Review: React.FC<{
               }}
             >
               <Image
-                src="/ReviewRestaurantStar.svg"
+                src="/RestaurantStar.svg"
                 width={16}
                 height={16}
-                alt="See Restaurant"
+                alt="Restaurant Rating"
                 className="pb-[3px]"
               />
-              <div className="ml-2 font-black text-main">4.3</div>
-              <div className="ml-1 text-main">(677)</div>
+              <div className="ml-2 text-sm font-black text-main">4.3</div>
+              <div className="ml-1 text-sm text-main">(677)</div>
             </div>
           </div>
         </div>

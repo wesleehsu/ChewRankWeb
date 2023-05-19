@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Archivo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
 
 * {
-  font-family: "Archivo", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   scrollbar-width: none;
 }
 
