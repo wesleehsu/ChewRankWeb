@@ -74,44 +74,44 @@ const data = {
 //   "Following":[
 
 
-    { height: 283, imgFlag:true, title: "Very cute spot next to the beach", description: "", 
-    img: "/Post15/Post.jpg", accountName: "Cindy_0314", accountPic: "/Post15/account.png",
-    likesNum: 2199, commentNum: 32, collectionNum: 76, restaurantName:"Resttttaurant",
-    reviewRank:4.7, reviewNum: 80, followingFlag: false, feature: "Following"},
+    { height: 233, imgFlag:true, title: "Enjoyed a delicious ramen dinner at HiroNori Craft Ramen at the Enclave", description: "Enjoyed a delicious ramen dinner at HiroNori Craft Ramen at the Enclave. Pictured here is the Spicy Dipping Cold Noodles, the Tonkatsu Ramen, the Spicy Tuna on Crispy Rice and the Pork Belly Buns. @hironoriramen", 
+    img: "/Post15/Post.jpg", accountName: "shortsweet2eat", accountPic: "/Post15/account.png",
+    likesNum: 2199, commentNum: 32, collectionNum: 76, restaurantName:"Hironori",
+    reviewRank:4.6, reviewNum: 1921, followingFlag: false, feature: "Following"},
 
-    { height: 202, imgFlag:true, title: "Very cute spot next to the beach", description: "", 
-    img: "/Post16/Post.jpg", accountName: "Cindy_0314", accountPic: "/Post16/account.png",
-    likesNum: 165, commentNum: 32, collectionNum: 76, restaurantName:"Resttttaurant",
-    reviewRank:4.7, reviewNum: 80, followingFlag: true, feature: "Following"},
+    { height: 282, imgFlag:true, title: "Love my drinks super sweet but this place is not as sweet as most boba places even at 100%", description: "✧ mango high mountain tea ($5.30) - all of their fruit teas are made with high mountain oolong tea. this one was the most fragrant so it was def my favorite out of the two✧ passionfruit high mountain tea ($5.30) - this one wasn't bad but i felt like it wasn't as fragrant as mango", 
+    img: "/Post16/Post.jpg", accountName: "friesandchives", accountPic: "/Post16/account.png",
+    likesNum: 365, commentNum: 132, collectionNum: 76, restaurantName:"Soma tea & mocktail",
+    reviewRank:4.5, reviewNum: 57, followingFlag: true, feature: "Following"},
 
     //   ],
 //   "New":[
-    { height: 190, imgFlag:true, title: "jk jhbgvcd ", description: "", 
-    img: "/Post17/Post.jpg", accountName: "Cindy_0314", accountPic: "/Post17/account.png",
-    likesNum: 129, commentNum: 32, collectionNum: 76, restaurantName:"Resttttaurant",
-    reviewRank:4.7, reviewNum: 80, followingFlag: false, feature: "New"},
+    { height: 290, imgFlag:true, title: "Honey Pig Irvine", description: "PC @spencerqin    #irvine #irvinefood #irvinefoodie #irvinefoodies#foodie #foodies #food #nice #yum #tasty", 
+    img: "/Post17/Post.jpg", accountName: "irvinefoodies", accountPic: "/Post17/account.png",
+    likesNum: 629, commentNum: 74, collectionNum: 6, restaurantName:"HoneyPig",
+    reviewRank:4.2, reviewNum: 359, followingFlag: false, feature: "New"},
 
-    { height: 260, imgFlag:true, title: "Very cute spot next to the beach", description: "", 
-    img: "/Post18/Post.jpg", accountName: "Cindy_0314", accountPic: "/Post18/account.png",
-    likesNum: 1139, commentNum: 32, collectionNum: 76, restaurantName:"Resttttaurant",
-    reviewRank:4.7, reviewNum: 80, followingFlag: false, feature: "New"},
+    { height: 210, imgFlag:true, title: "Snooze A.M. Eatery📍(chain)", description: "🥚Huevos tostada ⭐️7/10 $12.25\n🥑Smashed avocado⭐️6/10 $14.95\ 🍫Hot chocolate ⭐️8/10 $4.50\n\n\nThe ambiance is very scenic. The food could use more flavor especially for the price. If i were to choose, I would go first to watch over this place for brunch.", 
+    img: "/Post18/Post.jpg", accountName: "phaties.eat", accountPic: "/Post18/account.png",
+    likesNum: 1139, commentNum: 32, collectionNum: 76, restaurantName:"Snooze, AN A.M.",
+    reviewRank:4.4, reviewNum: 1915, followingFlag: false, feature: "New"},
 
-    { height: 310, imgFlag:false, title: "Very cute spot next to the beach", description: "", 
-    img: "/Post19/Post.mp4", accountName: "Cindy_0314", accountPic: "/Post19/account.png",
-    likesNum: 197, commentNum: 32, collectionNum: 76, restaurantName:"Resttttaurant",
-    reviewRank:4.7, reviewNum: 80, followingFlag: false, feature: "New"},
+    { height: 310, imgFlag:false, title: "@houstonsrestaurants| always a solid option", description: "@houstonsrestaurants| always a solid option, how do we always forget about the hawaiian rib eye! and the five nut brownie is my new fav dessert🍫🤤", 
+    img: "/Post19/Post.mp4", accountName: "conniechews", accountPic: "/Post19/account.png",
+    likesNum: 719, commentNum: 51, collectionNum: 117, restaurantName:"Houston’s Restaurant ",
+    reviewRank:4.5, reviewNum: 1682, followingFlag: false, feature: "New"},
 
-    { height: 221, imgFlag:true, title: "Very cute spot next to the beach", description: "", 
-    img: "/Post20/Post.jpg", accountName: "Cindy_0314", accountPic: "/Post20/account.png",
-    likesNum: 119, commentNum: 32, collectionNum: 76, restaurantName:"Resttttaurant",
-    reviewRank:4.7, reviewNum: 80, followingFlag: false, feature: "New"},
+    { height: 221, imgFlag:true, title: "Geat for any occasion and private events", description: "We love going to @eddievs_ it’s great for any occasion and private events too.. especially when there’s cheesy potatoes involved 😉They have locations in Michigan, Massachusetts and more! Check them out!", 
+    img: "/Post20/Post.jpg", accountName: "bossblue.eats", accountPic: "/Post20/account.png",
+    likesNum: 269, commentNum: 14, collectionNum: 36, restaurantName:"Eddie V’s Seafood",
+    reviewRank:4.7, reviewNum: 743, followingFlag: false, feature: "New"},
 
     //   ],
 //   "Best":[
-    { height: 283, imgFlag:true, title: "Very cute spot next to the beach", description: "", 
+    { height: 263, imgFlag:true, title: "Beautiful Saturday meal 🪴", description: "#rogersgardens #rogersgardensnewportbeach#farmhouse #farmhouseatrogersgardens#farmtotable #enchiladas #stuffedfrenchtoast#newportbeach ", 
     img: "/Post21/Post.jpg", accountName: "Cindy_0314", accountPic: "/Post21/account.png",
-    likesNum: 5178, commentNum: 2832, collectionNum: 3676, restaurantName:"Resttttaurant",
-    reviewRank:4.7, reviewNum: 80, followingFlag: false, feature: "Best"},
+    likesNum: 8110, commentNum: 232, collectionNum: 3676, restaurantName:"Roger's Gardens",
+    reviewRank:4.6, reviewNum: 1434, followingFlag: false, feature: "Best"},
 
 ],
 };

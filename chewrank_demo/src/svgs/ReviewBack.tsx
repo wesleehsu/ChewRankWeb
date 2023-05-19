@@ -35,7 +35,6 @@ export const ReviewBack = (props:any) => (
           result="hardAlpha"
         />
         <feOffset dy="2" />
-        <feGaussianBlur stdDeviation="6" />
         <feComposite in2="hardAlpha" operator="out" />
         <feColorMatrix
           type="matrix"
