@@ -54,19 +54,22 @@ export const Review: React.FC<{
         // style={{boxShadow: "0 0px 64px 36px rgb(0 0 0 / 0.9)"}}
       >
         <div className="relative h-[640px] w-[360px] shrink-0">
-            {(reviewData?.imgFlag) == true ? <Image
-            src={reviewData?.img || "/Post1/Post.jpg"}
-            alt={reviewData?.title || "" }
-            fill={true}
-            style={{ objectFit: "cover" }}
-            /> : <video 
-            autoPlay
-            muted
-            loop
-            playsInline
-            src={reviewData?.img || "/Post2/Post.mp4"}
+          {reviewData?.imgFlag == true ? (
+            <Image
+              src={reviewData?.img || "/Post1/Post.jpg"}
+              alt={reviewData?.title || ""}
+              fill={true}
+              style={{ objectFit: "cover" }}
             />
-            }
+          ) : (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              src={reviewData?.img || "/Post2/Post.mp4"}
+            />
+          )}
           {/* <Image
             src={reviewData?.img || "/Post1.png"}
             fill={true}
@@ -79,8 +82,8 @@ export const Review: React.FC<{
           /> */}
           <div className="absolute top-0 z-[100] flex h-full w-full flex-col">
             <div
-              className="font-xl relative ml-4 mt-10 h-6 w-6 cursor-pointer text-white"
-              style={{ filter: "drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.6))" }}
+              className="font-xl relative ml-6 mt-12 h-16 w-16 cursor-pointer text-white"
+              style={{ filter: "drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.8))" }}
               onClick={() => {
                 if (!mainRef.current) return;
                 mainRef.current.style.transform = "translateX(400px)";
@@ -93,7 +96,7 @@ export const Review: React.FC<{
                 }, 300);
               }}
             >
-              <ReviewBack className="w-9" />
+              <ReviewBack className="w-8 h-8 p-2" />
             </div>
             <div className="flex h-full w-full flex-row p-4 duration-[200ms]">
               <div
@@ -115,9 +118,13 @@ export const Review: React.FC<{
                     />
                   </div>
                   <div className="ml-2.5 flex shrink-0 flex-col text-white">
-                    <div className="text-[16px] font-extrabold">{reviewData?.accountName}</div>
+                    <div className="text-[16px] font-extrabold">
+                      {reviewData?.accountName}
+                    </div>
                     <div className="text-[12px] font-bold opacity-70">
-                      {reviewData?.followingFlag == true ? "Following" : "Follow"}
+                      {reviewData?.followingFlag == true
+                        ? "Following"
+                        : "Follow"}
                     </div>
                   </div>
                 </div>
@@ -132,11 +139,24 @@ export const Review: React.FC<{
                 }}
               >
                 <ReviewLike className="mb-2 w-[26px]" />
-                <div className="mb-5 text-xs font-medium text-white">{((reviewData?.likesNum || 255) > 1000 ?  ((reviewData?.likesNum || 255) / 1000).toFixed(1) + "k" : reviewData?.likesNum)}</div>
+                <div className="mb-5 text-xs font-medium text-white">
+                  {(reviewData?.likesNum || 255) > 1000
+                    ? ((reviewData?.likesNum || 255) / 1000).toFixed(1) + "k"
+                    : reviewData?.likesNum}
+                </div>
                 <ReviewSave className="mb-2 w-[22px]" />
-                <div className="mb-5 text-xs font-medium text-white">{((reviewData?.commentNum || 255) > 1000 ?  ((reviewData?.commentNum || 255) / 1000).toFixed(1) + "k" : reviewData?.commentNum)}</div>
+                <div className="mb-5 text-xs font-medium text-white">
+                  {(reviewData?.commentNum || 255) > 1000
+                    ? ((reviewData?.commentNum || 255) / 1000).toFixed(1) + "k"
+                    : reviewData?.commentNum}
+                </div>
                 <ReviewComment className="mb-2 w-6" />
-                <div className="mb-5 text-xs font-medium text-white">{((reviewData?.collectionNum || 255) > 1000 ?  ((reviewData?.collectionNum || 255) / 1000).toFixed(1) + "k" : reviewData?.collectionNum)}</div>
+                <div className="mb-5 text-xs font-medium text-white">
+                  {(reviewData?.collectionNum || 255) > 1000
+                    ? ((reviewData?.collectionNum || 255) / 1000).toFixed(1) +
+                      "k"
+                    : reviewData?.collectionNum}
+                </div>
                 <ReviewShare className="mb-2.5 w-6" />
               </div>
             </div>
@@ -180,7 +200,9 @@ export const Review: React.FC<{
                 visibility: restaurant ? "hidden" : "visible",
               }}
             >
-              <div className="text-[13px] font-black">{reviewData?.restaurantName}</div>
+              <div className="text-[13px] font-black">
+                {reviewData?.restaurantName}
+              </div>
               <div className="flex flex-row text-[10px] font-bold opacity-50">
                 <div>{reviewData?.category}</div>
                 <div className="mx-1">•</div>
@@ -201,8 +223,12 @@ export const Review: React.FC<{
                 alt="Restaurant Rating"
                 className="pb-[3px]"
               />
-              <div className="ml-2 text-sm font-black text-main">{reviewData?.reviewRank}</div>
-              <div className="ml-1 text-sm text-main">({reviewData?.reviewNum})</div>
+              <div className="ml-2 text-sm font-black text-main">
+                {reviewData?.reviewRank}
+              </div>
+              <div className="ml-1 text-sm text-main">
+                ({reviewData?.reviewNum})
+              </div>
             </div>
           </div>
         </div>

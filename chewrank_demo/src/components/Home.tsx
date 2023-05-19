@@ -78,7 +78,25 @@ export const Home: React.FC<{
             style={{
               height: `${e.height}px`,
             }}
-          ></div>
+          >
+            {e.imgFlag == true ? (
+              <Image
+                src={e.img}
+                alt="e.title"
+                fill={true}
+                style={{ objectFit: "cover" }}
+              />
+            ) : (
+              <video
+                autoPlay
+                muted
+                loop
+                //   webkit-playsinline
+                playsInline
+                src={e.img}
+              />
+            )}
+          </div>
         }
       </div>
       <div className="w-full shrink-0 px-3 pt-2.5 text-[11px] font-semibold">
@@ -95,9 +113,9 @@ export const Home: React.FC<{
         </div>
         <div className="ml-2 flex shrink-0 flex-col">
           <div className="text-[10px] font-semibold">{e.accountName}</div>
-          {e.followingFlag && <div className="text-[8px] opacity-50">
-            Following
-          </div>}
+          {e.followingFlag && (
+            <div className="text-[8px] opacity-50">Following</div>
+          )}
         </div>
         <div className="flex h-6 w-full flex-row items-center justify-end">
           <HomeLike className="" />

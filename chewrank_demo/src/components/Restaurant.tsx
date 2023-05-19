@@ -17,14 +17,20 @@ export const Restaurant: React.FC<{
   const [tab, setTab] = useState("Overview");
   const [tabUI, setTabUI] = useState([92.3, 24]);
   const labels = [
-    "vegetarian-friendly",
-    "vegetarian",
-    "sexy",
-    "vegetarian",
-    "big",
-    "sexy",
-    "big",
-    "vegetarian",
+    "Vegetarian-Friendly",
+    "Vegetarian",
+    "Child-Friendly",
+    "Korean",
+    "BBQ",
+    "Boba",
+    "Steak House",
+    "Chinese",
+    "Party Vibe",
+    "High End",
+    "Brunch",
+    "Free Parking",
+    "Eco-Friendly",
+    "Pet-Friendly",
   ];
 
   return (
@@ -98,7 +104,7 @@ export const Restaurant: React.FC<{
             </div>
           </div>
         </div>
-        <div className="h-20"></div>
+        {/* <div className="h-20"></div> */}
         <div className="overflow-scroll">
           <div className="relative flex h-11 w-[480px] flex-row">
             <div
@@ -140,8 +146,8 @@ export const Restaurant: React.FC<{
         </div>
         <div className="mx-6 my-6">
           <div className="flex flex-col">
-            <div className="mb-5 flex flex-row justify-around w-full">
-              <div className="relative w-14 flex shrink-0 cursor-pointer flex-col items-center">
+            <div className="mb-5 flex w-full flex-row justify-around">
+              <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
                   src="/RestaurantHours.svg"
                   width={24}
@@ -152,7 +158,7 @@ export const Restaurant: React.FC<{
                 <div className="py-1 text-sm text-main">Hours</div>
               </div>
               <div className="h-8 border-l-[0.4px] border-[#ffa88d]" />
-              <div className="relative w-14 flex shrink-0 cursor-pointer flex-col items-center">
+              <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
                   src="/RestaurantCall.svg"
                   width={24}
@@ -163,7 +169,7 @@ export const Restaurant: React.FC<{
                 <div className="py-1 text-sm text-main">Call</div>
               </div>
               <div className="h-8 border-l-[0.4px] border-[#ffa88d]" />
-              <div className="relative w-14 flex shrink-0 cursor-pointer flex-col items-center">
+              <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
                   src="/RestaurantLinks.svg"
                   width={24}
@@ -174,8 +180,8 @@ export const Restaurant: React.FC<{
                 <div className="py-1 text-sm text-main">Links</div>
               </div>
             </div>
-            <div className="flex flex-row justify-around w-full">
-              <div className="relative w-14 flex shrink-0 cursor-pointer flex-col items-center">
+            <div className="flex w-full flex-row justify-around">
+              <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
                   src="/RestaurantReserve.svg"
                   width={24}
@@ -186,7 +192,7 @@ export const Restaurant: React.FC<{
                 <div className="py-1 text-sm text-main">Reserve</div>
               </div>
               <div className="h-8 border-l-[0.4px] border-[#ffa88d]" />
-              <div className="relative w-14 flex shrink-0 cursor-pointer flex-col items-center">
+              <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
                   src="/RestaurantOrder.svg"
                   width={24}
@@ -197,7 +203,7 @@ export const Restaurant: React.FC<{
                 <div className="py-1 text-sm text-main">Order</div>
               </div>
               <div className="h-8 border-l-[0.4px] border-[#ffa88d]" />
-              <div className="relative w-14 flex shrink-0 cursor-pointer flex-col items-center">
+              <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
                   src="/RestaurantDelivery.svg"
                   width={24}
@@ -237,14 +243,16 @@ export const Restaurant: React.FC<{
             </div>
             <div className="mb-6 w-[60%] flex-col self-center border-t-[0.4px] border-[#ffa88d]"></div>
             <div className="mb-8 flex w-full flex-row flex-wrap">
-              {labels.map((e, i) => (
-                <div
-                  key={i}
-                  className="my-1.5 mr-3 flex cursor-pointer flex-row items-center justify-center break-normal rounded-full border-[0.5px] border-main bg-main px-5 py-1 text-[13px] text-white"
-                >
-                  {e}
-                </div>
-              ))}
+              {labels
+                .filter(() => Math.random() > 0.5)
+                .map((e, i) => (
+                  <div
+                    key={i}
+                    className="my-1.5 mr-3 flex cursor-pointer flex-row items-center justify-center break-normal rounded-full border-[0.5px] border-main bg-main px-5 py-1 text-[13px] text-white"
+                  >
+                    {e}
+                  </div>
+                ))}
             </div>
             <div className="mb-36 w-[60%] flex-col self-center border-t-[0.4px] border-[#ffa88d] pt-6"></div>
           </div>
