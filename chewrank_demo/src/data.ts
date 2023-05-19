@@ -6,27 +6,27 @@ const data = {
       reviewRank:4.3, reviewNum: 128, followingFlag: false, feature: "Hot"},
 
     { height: 272, imgFlag:false, title: "Had to get some vids of my first time at @iniristorante!", description: "It’s been on my list of places to try for months 🤤 been feeling inspired to create food content outside of the kitchen again so I thought I’d share! (Bringing back the Yelp elite in me hahaha)🫶🏼", 
-      img: "/Post2/Post.mp4", accountName: "skatewithlinda", accountPic: "/Post2/Account.png",
+      img: "/Post2/Post.mp4", accountName: "skatewithlin", accountPic: "/Post2/Account.png",
       likesNum: 165, commentNum: 32, collectionNum: 76, restaurantName:"Ini Ristorane",
       reviewRank:4.5, reviewNum: 231, followingFlag: true, feature: "Hot"},
 
     { height: 185, imgFlag:true, title: "I have a good review for you all today 🫶", description: "hello friends! \nI have a good review for you all today 🫶\nSo my family and I went to @folksrestaurantand we knew this place was amazing, but it really blew our minds \n", 
-      img: "/Post3/Post.jpg", accountName: "bishesdishes_", accountPic: "/Post3/Account.png",
+      img: "/Post3/Post.jpg", accountName: "bishesdishes", accountPic: "/Post3/Account.png",
       likesNum: 326, commentNum: 5, collectionNum: 0, restaurantName:"Folks Pizzeria",
       reviewRank:4.7, reviewNum: 80, followingFlag: true, feature: "Hot"},
 
     { height: 270, imgFlag:true, title: "Introducing Northern-style Vietnamese cuisine", description: "\nCLICK HERE TO FOLLOW\n@supnoodlebar \n\nIf you would like to have your restaurant featured on our site for FREE, please email us at\naapiownedrestaurants@gmail.com", 
-      img: "/Post4/Post.jpg", accountName: "fkndeliciousness", accountPic: "/Post4/Account.png",
+      img: "/Post4/Post.jpg", accountName: "fkndelicious", accountPic: "/Post4/Account.png",
       likesNum: 772, commentNum: 29, collectionNum: 0, restaurantName:"SÚP NOODLE BAR",
       reviewRank:4.5, reviewNum: 704, followingFlag: false, feature: "Hot"},
 
     { height: 275, imgFlag:false, title: "Anyone else obsessed with bone marrow? 😅", description: "anyone else obsessed with bone marrow? 😅\n\nft. @nep.cafe\n\n#bonemarrow #bonemarrowpasta #banhmichao #bánhmìchảo #thitnuong", 
-      img: "/Post5/Post.mp4", accountName: "takeoneforroad", accountPic: "/Post5/account.png",
+      img: "/Post5/Post.mp4", accountName: "takeoneroad", accountPic: "/Post5/account.png",
       likesNum: 1322, commentNum: 981, collectionNum: 2312, restaurantName:"Nép cafe & brunch",
       reviewRank:4.7, reviewNum: 80, followingFlag: true, feature: "Hot"},
 
     { height: 260, imgFlag:true, title: "everything we ate at @anjin_costamesa", description: "everything we ate at @anjin_costamesa", 
-      img: "/Post6/Post.jpg", accountName: "johnson.doan", accountPic: "/Post6/account.png",
+      img: "/Post6/Post.jpg", accountName: "johnson.doa", accountPic: "/Post6/account.png",
       likesNum: 3965, commentNum: 966, collectionNum: 1255, restaurantName:"Anjin",
       reviewRank:4.6, reviewNum: 486, followingFlag: true, feature: "Hot"},
 

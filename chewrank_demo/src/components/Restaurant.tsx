@@ -34,7 +34,7 @@ export const Restaurant: React.FC<{
   return (
     <div
       ref={mainRef}
-      className="absolute z-[600] flex h-[640px] w-[360px] flex-col overflow-scroll bg-white"
+      className="absolute z-[600] flex h-[600px] w-[360px] flex-col overflow-scroll bg-white"
       style={{
         top: /Restaurant/.test(page) ? "84px" : "700px",
         pointerEvents: /Restaurant/.test(page) ? "auto" : "none",
@@ -42,7 +42,7 @@ export const Restaurant: React.FC<{
         transitionDelay: /Restaurant/.test(page) ? "500ms" : "0ms",
       }}
     >
-      <div className="flex h-[640px] w-[360px] flex-col">
+      <div className="flex w-full flex-col">
         <div className="flex flex-row">
           <div className="ml-6 flex w-full flex-col">
             <div className="pb-1 text-xl font-extrabold">Restaurant Name</div>
