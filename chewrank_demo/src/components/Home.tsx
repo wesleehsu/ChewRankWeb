@@ -14,7 +14,7 @@ export const Home: React.FC<{
   const reviewPreview = (e: (typeof data.hot)[0], i: number) => (
     <div
       key={i}
-      className="mb-6 flex w-full cursor-pointer flex-col bg-white"
+      className="mb-4 flex w-full cursor-pointer flex-col bg-white"
       onClick={() => {
         const img: HTMLElement | null = document.querySelector(
           `#previewImg-${i}`
@@ -81,11 +81,11 @@ export const Home: React.FC<{
           ></div>
         }
       </div>
-      <div className="w-full shrink-0 px-3 pt-2.5 text-xs font-semibold">
+      <div className="w-full shrink-0 px-3 pt-2.5 text-[11px] font-semibold">
         {e.title}
       </div>
-      <div className="flex w-full shrink-0 flex-row items-center pl-2.5 pr-3.5 pt-2">
-        <div className="relative h-[22px] w-[22px] shrink-0 overflow-clip rounded">
+      <div className="flex w-full shrink-0 flex-row items-center pl-2.5 pr-3.5 pt-1">
+        <div className="relative h-[20px] w-[20px] shrink-0 overflow-clip rounded">
           <Image
             src={e.accountPic}
             alt={e.title}
@@ -93,11 +93,11 @@ export const Home: React.FC<{
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div className="ml-1.5 flex shrink-0 flex-col">
+        <div className="ml-2 flex shrink-0 flex-col">
           <div className="text-[10px] font-semibold">{e.accountName}</div>
-          <div className="text-[8px] opacity-50">
-            {e.followingFlag ? "Following" : "Follow"}
-          </div>
+          {e.followingFlag && <div className="text-[8px] opacity-50">
+            Following
+          </div>}
         </div>
         <div className="flex h-6 w-full flex-row items-center justify-end">
           <HomeLike className="" />
@@ -123,7 +123,7 @@ export const Home: React.FC<{
           />
         </div>
       </div>
-      <div className="flex h-[720px] w-full flex-col overflow-scroll bg-white">
+      <div className="flex h-[720px] w-full flex-col overflow-y-scroll bg-white">
         <div className="sticky top-0 z-[100] flex h-20 shrink-0 flex-row items-center bg-white pl-4 pt-12">
           <Image
             src="/HomeLocation.svg"
@@ -155,18 +155,66 @@ export const Home: React.FC<{
             </div>
           </div>
         </div>
-        <div className="mx-3 flex h-24 shrink-0 flex-row items-center justify-start border-b-[0.4px] border-[#ffa88d] bg-white text-main">
-          <div className="ml-[8px] flex cursor-pointer flex-col items-center">
-            <Image
-              src="/HomeQuickFilter1.png"
-              width={48}
-              height={48}
-              alt="Korean Food"
-            />
-            <div className="mt-1 text-xs font-bold text-main">Korean</div>
+        <div className="my-1 flex h-24 w-full shrink-0 flex-row items-center justify-start overflow-scroll border-b-[0.4px] border-[#ffa88d] bg-white px-3 text-main">
+          <div className="flex shrink-0 cursor-pointer flex-row items-center pr-5">
+            <div className="ml-[12px] flex cursor-pointer flex-col items-center">
+              <div className="m-[0px] border-[0.4px] border-main">
+              <div className="m-[5px] border-[0.4px] border-main">
+                <Image
+                  src="/HomeQuickFilter0.png"
+                  width={30}
+                  height={30}
+                  alt="Korean Food"
+                  className="m-[5px]"
+                />
+              </div>
+              </div>
+              <div className="mt-2 text-xs font-bold text-main">Get Now!</div>
+            </div>
+            <div className="ml-[24px] flex cursor-pointer flex-col items-center">
+              <Image
+                src="/HomeQuickFilter1.png"
+                width={56}
+                height={56}
+                alt="Korean Food"
+              />
+              <div className="mt-1 text-xs font-bold text-main">Korean</div>
+            </div>
+            <div className="ml-[24px] flex cursor-pointer flex-col items-center">
+              <Image
+                src="/HomeQuickFilter3.png"
+                width={56}
+                height={56}
+                alt="Party Vibes"
+              />
+              <div className="mt-1 text-xs font-bold text-main">
+                Party Vibes
+              </div>
+            </div>
+            <div className="ml-[25px] flex shrink-0 cursor-pointer flex-col items-center">
+              <Image
+                src="/HomeQuickFilter2.png"
+                width={56}
+                height={56}
+                alt="Boba"
+              />
+              <div className="mt-1 text-xs font-bold text-main">Boba</div>
+            </div>
+            <div className="ml-[20px] flex shrink-0 cursor-pointer flex-col items-center">
+              <Image
+                src="/HomeQuickFilter4.png"
+                width={56}
+                height={56}
+                alt="Perfect Date"
+                className="brightness-125"
+              />
+              <div className="mt-1 text-xs font-bold text-main">
+                Perfect Date
+              </div>
+            </div>
           </div>
         </div>
-        <div className="sticky top-20 z-[50] flex h-[72px] shrink-0 flex-row items-center bg-white py-4 pl-[26px]">
+        <div className="sticky top-20 z-[50] flex h-[56px] shrink-0 flex-row items-center bg-white py-1 pl-[26px]">
           <Image
             src="HomeFilter.svg"
             width={22}

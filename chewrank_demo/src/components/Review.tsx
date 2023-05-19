@@ -106,7 +106,7 @@ export const Review: React.FC<{
                     filter: "drop-shadow(0px 2px 16px rgba(0, 0, 0, 0.5))",
                   }}
                 >
-                  <div className="relative h-11 w-11 overflow-clip rounded border border-white">
+                  <div className="relative h-11 w-11 overflow-clip rounded-full border border-white">
                     <Image
                       src={reviewData?.accountPic || "/Cindy.jpg"}
                       fill={true}
