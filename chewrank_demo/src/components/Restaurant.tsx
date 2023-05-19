@@ -3,11 +3,15 @@ import React, { useRef, useState } from "react";
 import { RestaurantExpand } from "~/svgs/RestaurantExpand";
 import { RestaurantSave } from "~/svgs/RestaurantSave";
 import { RestaurantShare } from "~/svgs/RestaurantShare";
+import data from "../data";
 
 export const Restaurant: React.FC<{
   page: string;
   setPage: React.Dispatch<React.SetStateAction<string>>;
 }> = ({ page, setPage }) => {
+  const tempStr = page.split(" ")[1];
+  const restaurantData = data.hot[parseInt(String(tempStr))];
+  console.log(restaurantData);  
   const mainRef = useRef<HTMLDivElement>(null);
   const tabs = ["Overview", "Reviews", "Menu", "Official", "Similar Places"];
   const [tab, setTab] = useState("Overview");
@@ -37,15 +41,15 @@ export const Restaurant: React.FC<{
       <div className="flex w-full flex-col">
         <div className="flex flex-row">
           <div className="ml-6 flex w-full flex-col">
-            <div className="pb-1 text-xl font-extrabold">Restaurant Name</div>
+            <div className="pb-1 text-xl font-extrabold">{restaurantData?.restaurantName}</div>
             <div className="flex flex-row items-center pb-1">
               <div className="text-[11px] font-semibold opacity-60">
-                Cafe & BBQ
+                {restaurantData?.category}
               </div>
               <div className="px-2 pb-[1px] text-[8px] font-semibold opacity-60">
                 •
               </div>
-              <div className="text-[11px] font-semibold opacity-60">8.8</div>
+              <div className="text-[11px] font-semibold opacity-60">{restaurantData?.distance}</div>
               <div className="px-1 text-[11px] font-semibold opacity-60">
                 mil
               </div>
@@ -54,7 +58,7 @@ export const Restaurant: React.FC<{
               <div className="text-[13px] font-bold text-lime-500">Open</div>
               <div className="px-2 text-[8px] font-semibold opacity-60">•</div>
               <div className="text-[13px] font-light opacity-60">
-                Closes 12 AM
+                Closes {restaurantData?.closeTime}
               </div>
               <RestaurantExpand className="mb-[1px] ml-1.5 w-2" />
             </div>
@@ -66,9 +70,9 @@ export const Restaurant: React.FC<{
                 alt="Rating"
                 className="mb-[3px]"
               />
-              <div className="ml-2 text-xs font-extrabold text-main">4.3</div>
+              <div className="ml-2 text-xs font-extrabold text-main">{restaurantData?.reviewRank}</div>
               <div className="ml-1 text-xs font-extralight text-main">
-                (677)
+                ({restaurantData?.reviewNum})
               </div>
               <div className="ml-3 flex h-5 cursor-pointer flex-row items-center justify-center rounded-full border-[0.5px] border-main bg-main px-4 py-0.5 text-xs text-white">
                 Rate

@@ -153,11 +153,11 @@ export const Review: React.FC<{
             }}
             onClick={() => {
               setRestaurant((p) => !p);
-              console.log(page.substring(0, page.length - 11));
+            //   console.log(page.substring(0, page.length - 11));
               setPage((p) =>
                 /Restaurant/.test(p)
                   ? p.substring(0, p.length - 11)
-                  : p + ":Restaurant"
+                  : p + " Restaurant"
               );
             }}
           >
@@ -182,9 +182,9 @@ export const Review: React.FC<{
             >
               <div className="text-[13px] font-black">{reviewData?.restaurantName}</div>
               <div className="flex flex-row text-[10px] font-bold opacity-50">
-                <div>Café</div>
+                <div>{reviewData?.category}</div>
                 <div className="mx-1">•</div>
-                <div>8.8</div>
+                <div>{reviewData?.distance}</div>
                 <div className="mx-0.5">mil</div>
               </div>
             </div>
