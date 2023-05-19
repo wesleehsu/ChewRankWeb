@@ -55,7 +55,7 @@ export const Review: React.FC<{
       >
         <div className="relative h-[640px] w-[360px] shrink-0">
             {(reviewData?.imgFlag) == true ? <Image
-            src={reviewData?.img || "/Post1.mp4"}
+            src={reviewData?.img || "/Post1/Post.jpg"}
             alt={reviewData?.title || "" }
             fill={true}
             style={{ objectFit: "cover" }}
@@ -63,7 +63,7 @@ export const Review: React.FC<{
             autoPlay
             muted
             loop
-            src="/Post2/Post.mp4"
+            src={reviewData?.img || "/Post2/Post.mp4"}
             />
             }
           {/* <Image
