@@ -1,36 +1,36 @@
 const data = {
   hot: [
-    { height: 233,imgFlag:true, title: "Thai food is so good🤤", description: "Siam Station | Irvine, CA \nThai food is so good🤤here are the #deats : \n-Pad Thai \n -Pad See Ew \n-Chinese Broccoli", 
+    { height: 233,imgFlag:true, title: "Thai food is so good🤤", description: "Siam Station | Irvine, CA \nThai food is so good🤤here are the deats : \nPad Thai \n Pad See Ew \nChinese Broccoli", 
       img: "/Post1/Post.jpg", accountName: "clovchoi", accountPic: "/Post1/Account.png",
       likesNum: 520, commentNum: 5, collectionNum: 1, restaurantName:"Siam Station",
       reviewRank:4.3, reviewNum: 128, followingFlag: false, feature: "Hot", 
       category:"Thai", closeTime: "7 PM", distance: 8.8},
 
-    { height: 272, imgFlag:false, title: "Had to get some vids of my first time at @iniristorante!", description: "It’s been on my list of places to try for months 🤤 been feeling inspired to create food content outside of the kitchen again so I thought I’d share! (Bringing back the Yelp elite in me hahaha)🫶🏼", 
+    { height: 272, imgFlag:false, title: "Had to get some vids of my first time at iniristorante!", description: "It’s been on my list of places to try for months 🤤 been feeling inspired to create food content outside of the kitchen again so I thought I’d share! (Bringing back the Yelp elite in me hahaha)🫶🏼", 
       img: "/Post2/Post.mp4", accountName: "skatewithlin", accountPic: "/Post2/Account.png",
       likesNum: 165, commentNum: 32, collectionNum: 76, restaurantName:"Ini Ristorane",
       reviewRank:4.5, reviewNum: 231, followingFlag: true, feature: "Hot", 
       category:"fusion", closeTime: "10 PM", distance: 7.1},
 
-    { height: 285, imgFlag:true, title: "I have a good review for you all today 🫶", description: "hello friends! \nI have a good review for you all today 🫶\nSo my family and I went to @folksrestaurantand we knew this place was amazing, but it really blew our minds \n", 
+    { height: 285, imgFlag:true, title: "I have a good review for you all today 🫶", description: "hello friends! \nI have a good review for you all today 🫶\nSo my family and I went to folksrestaurantand we knew this place was amazing, but it really blew our minds \n", 
       img: "/Post3/Post.jpg", accountName: "bishesdishes", accountPic: "/Post3/Account.png",
       likesNum: 326, commentNum: 5, collectionNum: 0, restaurantName:"Folks Pizzeria",
       reviewRank:4.7, reviewNum: 80, followingFlag: true, feature: "Hot", 
       category:"pizza", closeTime: "9 PM", distance: 10.8},
 
-    { height: 170, imgFlag:true, title: "Introducing Northern-style Vietnamese cuisine", description: "\nCLICK HERE TO FOLLOW\n@supnoodlebar \n\nIf you would like to have your restaurant featured on our site for FREE, please email us at\naapiownedrestaurants@gmail.com", 
+    { height: 170, imgFlag:true, title: "Introducing Northern-style Vietnamese cuisine", description: "\nCLICK HERE TO FOLLOW\n supnoodlebar \n\nIf you would like to have your restaurant featured on our site for FREE, please email us at\naapiownedrestaurants gmail.com", 
       img: "/Post4/Post.jpg", accountName: "fkndelicious", accountPic: "/Post4/Account.png",
       likesNum: 772, commentNum: 29, collectionNum: 0, restaurantName:"SÚP NOODLE BAR",
       reviewRank:4.5, reviewNum: 704, followingFlag: false, feature: "Hot", 
       category:"Asian Fusion", closeTime: "10 PM", distance: 12.8},
 
-    { height: 275, imgFlag:false, title: "Anyone else obsessed with bone marrow? 😅", description: "anyone else obsessed with bone marrow? 😅\n\nft. @nep.cafe\n\n#bonemarrow #bonemarrowpasta #banhmichao #bánhmìchảo #thitnuong", 
+    { height: 275, imgFlag:false, title: "Anyone else obsessed with bone marrow? 😅", description: "anyone else obsessed with bone marrow? 😅\n\nft. nep.cafe\n\n", 
       img: "/Post5/Post.mp4", accountName: "takeoneroad", accountPic: "/Post5/account.png",
       likesNum: 1322, commentNum: 981, collectionNum: 2312, restaurantName:"Nép cafe & brunch",
       reviewRank:4.7, reviewNum: 80, followingFlag: true, feature: "Hot", 
       category:"Cafe", closeTime: "7 PM", distance: 3.4},
 
-    { height: 260, imgFlag:true, title: "everything we ate at @anjin_costamesa", description: "everything we ate at @anjin_costamesa", 
+    { height: 260, imgFlag:true, title: "everything we ate at anjin costamesa", description: "everything we ate at anjin_costamesa", 
       img: "/Post6/Post.jpg", accountName: "johnson.doa", accountPic: "/Post6/account.png",
       likesNum: 3965, commentNum: 966, collectionNum: 1255, restaurantName:"Anjin",
       reviewRank:4.6, reviewNum: 486, followingFlag: true, feature: "Hot", 
@@ -48,7 +48,7 @@ const data = {
       reviewRank:3.8, reviewNum: 132, followingFlag: true, feature: "Hot", 
       category:"Restaurant", closeTime: "7 PM", distance: 19.1},
 
-    { height: 214, imgFlag:true, title: "I feel like a new boba shop opens in Irvine every week", description: "I feel like a new boba shop opens in Irvine every week and @cloudycotea is another one of them :-) Located in Heritage Plaza near Orobae, across from Omomo, and a short walk from Irvine High, Cloudy Co has a variety of drinks AND desserts, separating it from other shops.", 
+    { height: 214, imgFlag:true, title: "I feel like a new boba shop opens in Irvine every week", description: "I feel like a new boba shop opens in Irvine every week and cloudycotea is another one of them :-) Located in Heritage Plaza near Orobae, across from Omomo, and a short walk from Irvine High, Cloudy Co has a variety of drinks AND desserts, separating it from other shops.", 
     img: "/Post9/Post.jpg", accountName: "hungryhingco", accountPic: "/Post9/account.png",
     likesNum: 102, commentNum: 12, collectionNum: 2, restaurantName:"Cloudy Co", 
     reviewRank:4.2, reviewNum: 84, followingFlag: false, feature: "Hot", 
@@ -72,13 +72,13 @@ const data = {
     reviewRank:4.5, reviewNum: 2892, followingFlag: true, feature: "Hot", 
     category:"Italian", closeTime: "11 PM", distance: 17.6},
 
-    { height: 280, imgFlag:true, title: "Brunch date with my soon to be bride Monica~", description: "📍Irvine, CA\n@angelinaspizzeria \n\nSquid ink pasta is a must !!!!!!!", 
+    { height: 280, imgFlag:true, title: "Brunch date with my soon to be bride Monica~", description: "📍Irvine, CA\n angelinaspizzeria \n\nSquid ink pasta is a must !!!!!!!", 
     img: "/Post13/Post.jpg", accountName: "chapterrita", accountPic: "/Post13/account.png",
     likesNum: 296, commentNum: 132, collectionNum: 176, restaurantName:"Angelina's Pizzeria", 
     reviewRank:4.5, reviewNum: 706, followingFlag: true, feature: "Hot", 
     category:"Pizza", closeTime: "9 PM", distance: 6.8},
 
-    { height: 283, imgFlag:false, title: "Join me for some Japanese BBQ at @manpuku.cali🥩!", description: "What I ordered: - Uni beef sashimi  - Manpuku salad - Fresh corn - Angus Beef tongue",
+    { height: 283, imgFlag:false, title: "Join me for some Japanese BBQ at manpuku🥩!", description: "What I ordered: - Uni beef sashimi  - Manpuku salad - Fresh corn - Angus Beef tongue",
     img: "/Post14/Post.mp4", accountName: "jill.akemi", accountPic: "/Post14/account.png",
     likesNum: 297, commentNum: 28, collectionNum: 0, restaurantName:"Manpuku Jp BBQ",
     reviewRank:4.4, reviewNum: 204, followingFlag: false, feature: "Hot", 
@@ -86,7 +86,7 @@ const data = {
 
 //   ],
 //   "Following":[
-    { height: 233, imgFlag:true, title: "Enjoyed a delicious ramen dinner at HiroNori Craft Ramen at the Enclave", description: "Enjoyed a delicious ramen dinner at HiroNori Craft Ramen at the Enclave. Pictured here is the Spicy Dipping Cold Noodles, the Tonkatsu Ramen, the Spicy Tuna on Crispy Rice and the Pork Belly Buns. @hironoriramen", 
+    { height: 233, imgFlag:true, title: "Enjoyed a delicious ramen dinner at HiroNori Craft Ramen at the Enclave", description: "Enjoyed a delicious ramen dinner at HiroNori Craft Ramen at the Enclave. Pictured here is the Spicy Dipping Cold Noodles, the Tonkatsu Ramen, the Spicy Tuna on Crispy Rice and the Pork Belly Buns. hironoriramen", 
     img: "/Post15/Post.jpg", accountName: "shortsweet2", accountPic: "/Post15/account.png",
     likesNum: 2199, commentNum: 32, collectionNum: 76, restaurantName:"Hironori",
     reviewRank:4.6, reviewNum: 1921, followingFlag: false, feature: "Following", 
@@ -100,7 +100,7 @@ const data = {
 
     //   ],
 //   "New":[
-    { height: 290, imgFlag:true, title: "Honey Pig Irvine", description: "PC @spencerqin    #irvine #irvinefood #irvinefoodie #irvinefoodies#foodie #foodies #food #nice #yum #tasty", 
+    { height: 290, imgFlag:true, title: "Honey Pig Irvine", description: "Honey Pig Irvine⭐️⭐️⭐️", 
     img: "/Post17/Post.jpg", accountName: "irvinefoodies", accountPic: "/Post17/account.png",
     likesNum: 629, commentNum: 74, collectionNum: 6, restaurantName:"HoneyPig",
     reviewRank:4.2, reviewNum: 359, followingFlag: false, feature: "New", 
@@ -112,13 +112,13 @@ const data = {
     reviewRank:4.4, reviewNum: 1915, followingFlag: false, feature: "New", 
     category:"breakfast", closeTime: "5 PM", distance: 3.9},
 
-    { height: 310, imgFlag:false, title: "@houstonsrestaurants| always a solid option", description: "@houstonsrestaurants| always a solid option, how do we always forget about the hawaiian rib eye! and the five nut brownie is my new fav dessert🍫🤤", 
+    { height: 310, imgFlag:false, title: "Houstonsrestaurants| always a solid option", description: "Always a solid option, how do we always forget about the hawaiian rib eye! and the five nut brownie is my new fav dessert🍫🤤", 
     img: "/Post19/Post.mp4", accountName: "conniechews", accountPic: "/Post19/account.png",
     likesNum: 719, commentNum: 51, collectionNum: 117, restaurantName:"Houston’s Restaurant ",
     reviewRank:4.5, reviewNum: 1682, followingFlag: false, feature: "New", 
     category:"American", closeTime: "9 PM", distance: 6.5},
 
-    { height: 221, imgFlag:true, title: "Geat for any occasion and private events", description: "We love going to @eddievs_ it’s great for any occasion and private events too.. especially when there’s cheesy potatoes involved 😉They have locations in Michigan, Massachusetts and more! Check them out!", 
+    { height: 221, imgFlag:true, title: "Geat for any occasion and private events", description: "We love going to eddievs_ it’s great for any occasion and private events too.. especially when there’s cheesy potatoes involved 😉They have locations in Michigan, Massachusetts and more! Check them out!", 
     img: "/Post20/Post.jpg", accountName: "bossblue.eats", accountPic: "/Post20/account.png",
     likesNum: 269, commentNum: 14, collectionNum: 36, restaurantName:"Eddie V’s Seafood",
     reviewRank:4.7, reviewNum: 743, followingFlag: false, feature: "New", 
@@ -126,7 +126,7 @@ const data = {
 
     //   ],
 //   "Best":[
-    { height: 263, imgFlag:true, title: "Beautiful Saturday meal 🪴", description: "#rogersgardens #rogersgardensnewportbeach#farmhouse #farmhouseatrogersgardens#farmtotable #enchiladas #stuffedfrenchtoast#newportbeach ", 
+    { height: 263, imgFlag:true, title: "Beautiful Saturday meal 🪴", description: "", 
     img: "/Post21/Post.jpg", accountName: "Cindy_0314", accountPic: "/Post21/account.png",
     likesNum: 8110, commentNum: 232, collectionNum: 3676, restaurantName:"Roger's Gardens",
     reviewRank:4.6, reviewNum: 1434, followingFlag: false, feature: "Best", 
