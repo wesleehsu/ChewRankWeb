@@ -86,16 +86,14 @@ const data = {
 
 //   ],
 //   "Following":[
-
-
     { height: 233, imgFlag:true, title: "Enjoyed a delicious ramen dinner at HiroNori Craft Ramen at the Enclave", description: "Enjoyed a delicious ramen dinner at HiroNori Craft Ramen at the Enclave. Pictured here is the Spicy Dipping Cold Noodles, the Tonkatsu Ramen, the Spicy Tuna on Crispy Rice and the Pork Belly Buns. @hironoriramen", 
-    img: "/Post15/Post.jpg", accountName: "shortsweet2eat", accountPic: "/Post15/account.png",
+    img: "/Post15/Post.jpg", accountName: "shortsweet2", accountPic: "/Post15/account.png",
     likesNum: 2199, commentNum: 32, collectionNum: 76, restaurantName:"Hironori",
     reviewRank:4.6, reviewNum: 1921, followingFlag: false, feature: "Following", 
     category:"Ramen restaurant ", closeTime: "11 PM", distance: 6.9},
 
     { height: 282, imgFlag:true, title: "Love my drinks super sweet but this place is not as sweet as most boba places even at 100%", description: "✧ mango high mountain tea ($5.30) - all of their fruit teas are made with high mountain oolong tea. this one was the most fragrant so it was def my favorite out of the two✧ passionfruit high mountain tea ($5.30) - this one wasn't bad but i felt like it wasn't as fragrant as mango", 
-    img: "/Post16/Post.jpg", accountName: "friesandchives", accountPic: "/Post16/account.png",
+    img: "/Post16/Post.jpg", accountName: "friesandchi", accountPic: "/Post16/account.png",
     likesNum: 365, commentNum: 132, collectionNum: 76, restaurantName:"Soma tea & mocktail",
     reviewRank:4.5, reviewNum: 57, followingFlag: true, feature: "Following", 
     category:"Bubble tea store", closeTime: "8 PM", distance: 5.2},
