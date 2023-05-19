@@ -42,7 +42,7 @@ export const Restaurant: React.FC<{
         transitionDelay: /Restaurant/.test(page) ? "500ms" : "0ms",
       }}
     >
-      <div className="flex w-full flex-col">
+      <div className="flex h-[640px] w-[360px] flex-col">
         <div className="flex flex-row">
           <div className="ml-6 flex w-full flex-col">
             <div className="pb-1 text-xl font-extrabold">Restaurant Name</div>
