@@ -38,14 +38,23 @@ const Index: NextPage = () => {
             "absolute inset-x-0 bottom-0 z-[9999] h-20 w-[360px] rounded-b-[20px] border-t border-[#FFF6F3] bg-white"
           }
         >
-          <Image src="Nav.png" fill={true} alt="Nav" className="pb-[4px]" />
+          <Image
+            src="Nav.png"
+            fill={true}
+            alt="Nav"
+            className="pb-[4px]"
+            onClick={(e) => {
+              e.stopPropagation();
+              setComing((p) => (p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]));
+            }}
+          />
         </div>
       </div>
       <div
         className="absolute z-[9999]  origin-bottom ease-in-out"
         style={{
-          left: (coming[0]||0)-70,
-          top: (coming[1]||0)-70,
+          left: (coming[0] || 0) - 60,
+          top: (coming[1] || 0) - 60,
         }}
       >
         <div
@@ -55,7 +64,7 @@ const Index: NextPage = () => {
             transform: coming[0] === 0 ? "scale(0)" : "scale(1)",
           }}
         >
-          <Image src="ComingSoon.png" width={140} height={50} alt="Tooltip" />
+          <Image src="ComingSoon.png" width={120} height={40} alt="Tooltip" />
         </div>
       </div>
     </div>

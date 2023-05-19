@@ -11,7 +11,7 @@ export const Review: React.FC<{
   page: string;
   setPage: React.Dispatch<React.SetStateAction<string>>;
   setComing: React.Dispatch<React.SetStateAction<number[]>>;
-}> = ({ page, setPage }) => {
+}> = ({ page, setPage, setComing }) => {
   const mainRef = useRef<HTMLDivElement>(null);
   const [restaurant, setRestaurant] = useState(false);
   const tempStr = page.split(" ")[1];
@@ -86,7 +86,7 @@ export const Review: React.FC<{
               className="font-xl relative ml-6 mt-12 h-16 w-16 cursor-pointer text-white"
               style={{ filter: "drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.8))" }}
               onClick={(e) => {
-                e.stopPropagation()
+                e.stopPropagation();
                 if (!mainRef.current) return;
                 mainRef.current.style.transform = "translateX(400px)";
                 setTimeout(() => {
@@ -109,6 +109,12 @@ export const Review: React.FC<{
                   className="mb-3 flex flex-row items-end "
                   style={{
                     filter: "drop-shadow(0px 2px 16px rgba(0, 0, 0, 0.5))",
+                  }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setComing((p) =>
+                      p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]
+                    );
                   }}
                 >
                   <div className="relative h-11 w-11 overflow-clip rounded-full border border-white">
@@ -138,6 +144,12 @@ export const Review: React.FC<{
                 className="flex h-full w-6 shrink-0 flex-col items-center justify-end"
                 style={{
                   filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.6))",
+                }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setComing((p) =>
+                    p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]
+                  );
                 }}
               >
                 <ReviewLike className="mb-2 w-[26px]" />
@@ -174,7 +186,7 @@ export const Review: React.FC<{
               height: restaurant ? "680px" : "48px",
             }}
             onClick={(e) => {
-              e.stopPropagation()
+              e.stopPropagation();
               setRestaurant((p) => !p);
               //   console.log(page.substring(0, page.length - 11));
               setPage((p) =>

@@ -9,10 +9,10 @@ export const Restaurant: React.FC<{
   page: string;
   setPage: React.Dispatch<React.SetStateAction<string>>;
   setComing: React.Dispatch<React.SetStateAction<number[]>>;
-}> = ({ page, setPage }) => {
+}> = ({ page, setPage, setComing }) => {
   const tempStr = page.split(" ")[1];
   const restaurantData = data.hot[parseInt(String(tempStr))];
-  console.log(restaurantData);
+  // console.log(restaurantData);
   const mainRef = useRef<HTMLDivElement>(null);
   const tabs = ["Overview", "Reviews", "Menu", "Official", "Similar Places"];
   const [tab, setTab] = useState("Overview");
@@ -65,7 +65,15 @@ export const Restaurant: React.FC<{
                 mil
               </div>
             </div>
-            <div className="flex flex-row items-center pb-1">
+            <div
+              className="flex flex-row items-center pb-1"
+              onClick={(e) => {
+                e.stopPropagation();
+                setComing((p) =>
+                  p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]
+                );
+              }}
+            >
               <div className="text-[13px] font-bold text-lime-500">Open</div>
               <div className="px-2 text-[8px] font-semibold opacity-60">•</div>
               <div className="text-[13px] font-light opacity-60">
@@ -87,7 +95,15 @@ export const Restaurant: React.FC<{
               <div className="ml-1 text-xs font-extralight text-main">
                 ({restaurantData?.reviewNum})
               </div>
-              <div className="ml-3 flex h-5 cursor-pointer flex-row items-center justify-center rounded-full border-[0.5px] border-main bg-main px-4 py-0.5 text-xs text-white">
+              <div
+                className="ml-3 flex h-5 cursor-pointer flex-row items-center justify-center rounded-full border-[0.5px] border-main bg-main px-4 py-0.5 text-xs text-white"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setComing((p) =>
+                    p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]
+                  );
+                }}
+              >
                 Rate
               </div>
             </div>
@@ -98,11 +114,23 @@ export const Restaurant: React.FC<{
               width={48}
               height={48}
               alt="Review"
+              onClick={(e) => {
+                e.stopPropagation();
+                setComing((p) =>
+                  p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]
+                );
+              }}
             />
             {/* <div className="mt-1 pb-4 text-[80px] leading-8 text-main">+</div> */}
             {/* <div className="mt-1 px-2 py-1 text-xs text-main">Review</div> */}
           </div>
-          <div className="mr-6 flex w-8 shrink-0 flex-col items-center">
+          <div
+            className="mr-6 flex w-8 shrink-0 flex-col items-center"
+            onClick={(e) => {
+              e.stopPropagation();
+              setComing((p) => (p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]));
+            }}
+          >
             <RestaurantSave className="mb-0.5 w-5" />
             <div className="mb-3 text-[10px] font-medium text-main">Save</div>
             <RestaurantShare className="mb-0.5 w-5" />
@@ -131,6 +159,10 @@ export const Restaurant: React.FC<{
                   // opacity: tab === e ? 1 : 0.6
                 }}
                 onClick={(e_1) => {
+                  e_1.stopPropagation();
+                  setComing((p) =>
+                    p[0] === 0 ? [e_1.clientX, e_1.clientY] : [0, 0]
+                  );
                   setTab(e);
                   if (
                     !mainRef.current ||
@@ -153,7 +185,15 @@ export const Restaurant: React.FC<{
         </div>
         <div className="mx-6 my-6">
           <div className="flex flex-col">
-            <div className="mb-5 flex w-full flex-row justify-around">
+            <div
+              className="mb-5 flex w-full flex-row justify-around"
+              onClick={(e) => {
+                e.stopPropagation();
+                setComing((p) =>
+                  p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]
+                );
+              }}
+            >
               <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
                   src="/RestaurantHours.svg"
@@ -187,7 +227,15 @@ export const Restaurant: React.FC<{
                 <div className="py-1 text-sm text-main">Links</div>
               </div>
             </div>
-            <div className="flex w-full flex-row justify-around">
+            <div
+              className="flex w-full flex-row justify-around"
+              onClick={(e) => {
+                e.stopPropagation();
+                setComing((p) =>
+                  p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]
+                );
+              }}
+            >
               <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
                   src="/RestaurantReserve.svg"
@@ -245,6 +293,12 @@ export const Restaurant: React.FC<{
                   alt="Map"
                   fill={true}
                   style={{ objectFit: "cover" }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setComing((p) =>
+                      p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]
+                    );
+                  }}
                 />
               </div>
             </div>
@@ -256,12 +310,18 @@ export const Restaurant: React.FC<{
                   <div
                     key={i}
                     className="my-1.5 mr-3 flex cursor-pointer flex-row items-center justify-center break-normal rounded-full border-[0.5px] border-main bg-main px-5 py-1 text-[13px] text-white"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setComing((p) =>
+                        p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]
+                      );
+                    }}
                   >
                     {e}
                   </div>
                 ))}
             </div>
-            <div className="mb-36 w-[60%] flex-col self-center border-t-[0.4px] border-[#ffa88d] pt-6"></div>
+            <div className="mb-16 w-[60%] flex-col self-center border-t-[0.4px] border-[#ffa88d] pt-6"></div>
           </div>
         </div>
       </div>
