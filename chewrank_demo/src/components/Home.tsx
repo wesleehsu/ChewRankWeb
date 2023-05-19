@@ -3,7 +3,6 @@ import React, { useRef, useState } from "react"
 import { main } from "tailwind.config"
 import { HomeLike } from "~/svgs/HomeLike"
 import data from "../data"
-import "node_modules/video-react/dist/video-react.css";
 
 export const Home: React.FC<{
   setPage: React.Dispatch<React.SetStateAction<string>>;

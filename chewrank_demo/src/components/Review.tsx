@@ -140,13 +140,13 @@ export const Review: React.FC<{
             </div>
           </div>
           <div
-            className="absolute z-[500] flex cursor-pointer flex-row items-center bg-white px-4 duration-[360ms]"
+            className="absolute z-[500] flex cursor-pointer flex-row items-center bg-white px-4 duration-[240ms]"
             style={{
               filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.3))",
               width: restaurant ? "360px" : "284px",
               left: restaurant ? "0px" : "16px",
               bottom: restaurant ? "0px" : "18px",
-              borderRadius: restaurant ? "0px" : "24px",
+              borderRadius: restaurant ? "24px" : "24px",
               height: restaurant ? "640px" : "48px",
             }}
             onClick={() => {
