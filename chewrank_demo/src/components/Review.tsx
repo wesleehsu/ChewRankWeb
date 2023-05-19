@@ -54,7 +54,18 @@ export const Review: React.FC<{
         // style={{boxShadow: "0 0px 64px 36px rgb(0 0 0 / 0.9)"}}
       >
         <div className="relative h-[640px] w-[360px] shrink-0">
-          <Image
+            {(reviewData?.height || 150) < 200 ? <Image
+            src={reviewData?.img || "/Post1.mp4"}
+            alt={reviewData?.title || "" }
+            fill={true}
+            style={{ objectFit: "cover" }}
+            /> : <video 
+            autoPlay
+            muted
+            loop
+            src={reviewData?.img || "/Post1.mp4"}
+            />}
+          {/* <Image
             src={reviewData?.img || "/Post1.png"}
             fill={true}
             alt="test"
@@ -63,7 +74,7 @@ export const Review: React.FC<{
               objectFit: "cover",
               filter: restaurant ? "brightness(.3)" : "",
             }}
-          />
+          /> */}
           <div className="absolute top-0 z-[100] flex h-full w-full flex-col">
             <div
               className="font-xl relative ml-4 mt-10 h-6 w-6 cursor-pointer text-white"

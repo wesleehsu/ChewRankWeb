@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react"
 import { main } from "tailwind.config"
 import { HomeLike } from "~/svgs/HomeLike"
 import data from "../data"
+import "node_modules/video-react/dist/video-react.css";
 
 export const Home: React.FC<{
   setPage: React.Dispatch<React.SetStateAction<string>>;
@@ -54,23 +55,26 @@ export const Home: React.FC<{
           height: `${e.height}px`,
         }}
       >
-        <Image
+        {e.height < 200 ? <Image
           src={e.img}
           alt="e.title"
           fill={true}
           style={{ objectFit: "cover" }}
+        /> : <video 
+          autoPlay
+          muted
+          loop
+          src={e.img}
         />
-        <div
+}
+        {<div
           id={`previewImg-${i}`}
           className="absolute left-0 top-0 h-full w-full ease-in-out"
+          style={{
+            height: `${e.height}px`,
+          }}
         >
-          <Image
-            src={e.img}
-            alt="e.title"
-            fill={true}
-            style={{ objectFit: "cover" }}
-          />
-        </div>
+        </div>}
       </div>
       <div className="w-full shrink-0 px-3 pt-2.5 text-xs font-semibold">
         {e.title}
