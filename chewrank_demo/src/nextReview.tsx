@@ -15,7 +15,7 @@ export const nextReview = (
   return (
     <div
       key={i}
-      className="relative h-[590px] w-[340px] shrink-0 snap-start snap-always"
+      className="relative h-[580px] w-[340px] shrink-0 snap-start snap-always"
     >
       {data.hot[i]?.imgFlag == true ? (
         <Image
@@ -78,7 +78,7 @@ export const nextReview = (
                 </div>
               </div>
             </div>
-            <div className="mb-[64px] text-xs font-semibold text-white">
+            <div className="mb-[64px] text-xs font-semibold text-white pr-2">
               {data.hot[i]?.description}
             </div>
           </div>
@@ -110,7 +110,7 @@ export const nextReview = (
                 ? ((data.hot[i]?.collectionNum || 255) / 1000).toFixed(1) + "k"
                 : data.hot[i]?.collectionNum}
             </div>
-            <ReviewShare className="mb-2.5 w-6" />
+            <ReviewShare className="mb-3 w-6" />
           </div>
         </div>
       </div>
@@ -118,13 +118,13 @@ export const nextReview = (
         className="absolute z-[500] flex cursor-pointer flex-row items-center bg-white px-4 duration-[240ms]"
         style={{
           filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.3))",
-          width: restaurant ? "340px" : "284px",
+          width: restaurant ? "340px" : "270px",
           left: restaurant ? "0px" : "16px",
-          bottom: restaurant ? "0px" : "18px",
+          bottom: restaurant ? "0px" : "24px",
           borderRadius: restaurant ? "20px" : "24px",
           borderBottomLeftRadius: restaurant ? "0px" : "24px",
           borderBottomRightRadius: restaurant ? "0px" : "24px",
-          height: restaurant ? "590px" : "48px",
+          height: restaurant ? "580px" : "48px",
         }}
         onClick={(e) => {
           e.stopPropagation();

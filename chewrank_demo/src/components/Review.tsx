@@ -101,10 +101,10 @@ export const Review: React.FC<{
       </div>
       <div
         ref={mainRef}
-        className="absolute z-[210] flex h-[590px] w-[340px] snap-y snap-mandatory flex-col overflow-scroll rounded-t-[20px] duration-300 ease-in-out"
+        className="absolute z-[210] flex h-[580px] w-[340px] snap-y snap-mandatory flex-col overflow-scroll rounded-t-[20px] duration-300 ease-in-out"
         // style={{boxShadow: "0 0px 64px 36px rgb(0 0 0 / 0.9)"}}
       >
-        <div className="relative h-[590px] w-[340px] shrink-0 snap-start snap-always">
+        <div className="relative h-[580px] w-[340px] shrink-0 snap-start snap-always">
           {reviewData?.imgFlag == true ? (
             <Image
               src={reviewData?.img || "/Post1/Post.jpg"}
@@ -158,7 +158,7 @@ export const Review: React.FC<{
                     </div>
                   </div>
                 </div>
-                <div className="mb-[64px] text-xs font-semibold text-white">
+                <div className="mb-[64px] text-xs font-semibold text-white pr-2">
                   {reviewData?.description}
                 </div>
               </div>
@@ -193,7 +193,7 @@ export const Review: React.FC<{
                       "k"
                     : reviewData?.collectionNum}
                 </div>
-                <ReviewShare className="mb-2.5 w-6" />
+                <ReviewShare className="mb-3 w-6" />
               </div>
             </div>
           </div>
@@ -201,13 +201,13 @@ export const Review: React.FC<{
             className="absolute z-[500] flex cursor-pointer flex-row items-center bg-white px-4 duration-[240ms]"
             style={{
               filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.3))",
-              width: restaurant ? "340px" : "284px",
+              width: restaurant ? "340px" : "270px",
               left: restaurant ? "0px" : "16px",
-              bottom: restaurant ? "-0px" : "18px",
+              bottom: restaurant ? "0px" : "24px",
               borderRadius: restaurant ? "20px" : "24px",
               borderBottomLeftRadius: restaurant ? "0px" : "24px",
               borderBottomRightRadius: restaurant ? "0px" : "24px",
-              height: restaurant ? "590px" : "48px",
+              height: restaurant ? "580px" : "48px",
             }}
             onClick={(e) => {
               e.stopPropagation();

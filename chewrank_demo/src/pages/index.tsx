@@ -28,9 +28,29 @@ const Index: NextPage = () => {
       </div> */}
       <div className="">
         <div
+          className={
+            "cursor-pointer absolute top-6 z-[10000] flex h-[640px] w-[340px] flex-col items-center justify-center rounded-b-[20px] bg-white duration-500"
+          }
+          onClick={(e) => {
+            e.currentTarget.style.opacity = "0";
+            e.currentTarget.style.zIndex = "-100";
+          }}
+        >
+          <Image
+            src="Logo2.png"
+            width={200}
+            height={200}
+            alt="Cover"
+            className=""
+          />
+          <div className="">Restaurant Discovery for the New Generation</div>
+          <div className="">Demo</div>
+          <div className="rounded-full py-2 px-4 border">Experience Now</div>
+        </div>
+        <div
           id="target"
-          // className="relative flex h-[660px] w-[340px] flex-col overflow-hidden rounded-[20px] bg-white"
-          className="relative mt-[24px] flex h-[660px] w-[340px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0_/_0.5)]"
+          // className="relative flex h-[640px] w-[340px] flex-col overflow-hidden rounded-[20px] bg-white"
+          className="relative mt-[24px] flex h-[640px] w-[340px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0_/_0.5)]"
         >
           <Restaurant page={page} setPage={setPage} setComing={setComing} />
           <Review

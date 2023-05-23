@@ -38,7 +38,7 @@ export const Restaurant: React.FC<{
   return (
     <div
       ref={mainRef}
-      className="absolute z-[600] flex h-[590px] w-[340px] flex-col overflow-scroll bg-white"
+      className="absolute z-[600] flex h-[580px] w-[340px] flex-col overflow-scroll bg-white"
       style={{
         top: /Restaurant/.test(page) ? "84px" : "700px",
         pointerEvents: /Restaurant/.test(page) ? "auto" : "none",
