@@ -234,7 +234,7 @@ export const Review: React.FC<{
               }}
             />
             <div
-              className="mx-4 mt-[2px] flex shrink-0 flex-col truncate leading-[15px] duration-0"
+              className="mx-4 mt-[2px] flex w-[120px] shrink-0 flex-col truncate leading-[15px] duration-0"
               style={{
                 visibility: restaurant ? "hidden" : "visible",
               }}
@@ -243,10 +243,10 @@ export const Review: React.FC<{
                 {reviewData?.restaurantName}
               </div>
               <div className="flex flex-row text-[10px] font-bold opacity-50">
-                <div>{reviewData?.category}</div>
+                <div className="shrink truncate">{reviewData?.category}</div>
                 <div className="mx-1">•</div>
                 <div>{reviewData?.distance}</div>
-                <div className="mx-0.5">mil</div>
+                <div className="mx-0.5 shrink truncate">mil</div>
               </div>
             </div>
             <div
