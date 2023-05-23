@@ -117,7 +117,7 @@ export const Review: React.FC<{
                     );
                   }}
                 >
-                  <div className="relative h-11 w-11 overflow-clip rounded-full border border-white">
+                  <div className="relative h-11 w-11 overflow-hidden rounded-full border border-white">
                     <Image
                       src={reviewData?.accountPic || "/Cindy.jpg"}
                       fill={true}
@@ -182,7 +182,7 @@ export const Review: React.FC<{
               width: restaurant ? "360px" : "284px",
               left: restaurant ? "0px" : "16px",
               bottom: restaurant ? "-38px" : "18px",
-              borderRadius: restaurant ? "24px" : "24px",
+              borderRadius: restaurant ? "20px" : "24px",
               height: restaurant ? "680px" : "48px",
             }}
             onClick={(e) => {
@@ -197,7 +197,7 @@ export const Review: React.FC<{
             }}
           >
             <Image
-              src="/ReviewRestaurantExpand.svg"
+              src="/ReviewRestaurantExpand.png"
               width={14}
               height={14}
               alt="See Restaurant"
@@ -232,7 +232,7 @@ export const Review: React.FC<{
               }}
             >
               <Image
-                src="/RestaurantStar.svg"
+                src="/RestaurantStar.png"
                 width={16}
                 height={16}
                 alt="Restaurant Rating"

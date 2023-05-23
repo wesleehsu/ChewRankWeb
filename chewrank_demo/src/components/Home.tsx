@@ -11,7 +11,7 @@ export const Home: React.FC<{
   const currentSort = "";
   const [sort, setSort] = useState("Hot");
   const mainRef = useRef<HTMLDivElement>(null);
-  const sortModes = ["Hot", "New", "Following", "Best"];
+  const sortModes = ["Hot", "Following", "New", "Best"];
   const reviewPreview = (e: (typeof data.hot)[0], i: number) => (
     <div
       key={i}
@@ -50,7 +50,7 @@ export const Home: React.FC<{
       }}
     >
       <div
-        className="relative h-full w-full shrink-0 overflow-clip rounded-xl"
+        className="relative h-full w-full shrink-0 overflow-hidden rounded-xl"
         style={{
           height: `${e.height}px`,
         }}
@@ -104,7 +104,7 @@ export const Home: React.FC<{
         {e.title}
       </div>
       <div className="flex w-full shrink-0 flex-row items-center pl-2.5 pr-3.5 pt-1">
-        <div className="relative h-[20px] w-[20px] shrink-0 overflow-clip rounded">
+        <div className="relative h-[20px] w-[20px] shrink-0 overflow-hidden rounded">
           <Image
             src={e.accountPic}
             alt={e.title}
@@ -151,17 +151,17 @@ export const Home: React.FC<{
           }}
         >
           <Image
-            src="/HomeLocation.svg"
+            src="/HomeLocation.png"
             alt="Location"
             width={14}
             height={14}
             className="mt-[1px]"
           />
           <div className="ml-[11px] mr-3 mt-[1px] shrink-0 text-xs font-thin">
-            Los Angelas
+            Irvine
           </div>
           <Image
-            src="/HomeLocationSelect.svg"
+            src="/HomeLocationSelect.png"
             alt="Select Location"
             width={12}
             height={12}
@@ -169,7 +169,7 @@ export const Home: React.FC<{
           />
           <div className="ml-4 mr-3 flex h-full w-full flex-row items-center rounded-full border-[0.5px] border-main py-0.5 text-xs font-light">
             <Image
-              src="/HomeSearch.svg"
+              src="/HomeSearch.png"
               alt="Search"
               width={12}
               height={12}
@@ -247,7 +247,7 @@ export const Home: React.FC<{
         </div>
         <div className="sticky top-20 z-[50] flex h-[56px] shrink-0 flex-row items-center bg-white py-1 pl-[26px]">
           <Image
-            src="HomeFilter.svg"
+            src="HomeFilter.png"
             width={22}
             height={22}
             alt="Filter"
@@ -258,11 +258,11 @@ export const Home: React.FC<{
             }}
           />
           <div className="h-6 w-4 shrink-0 border-r-[0.5px] border-main bg-white" />
-          <div className="flex flex-row overflow-scroll pl-3">
+          <div className="flex flex-row overflow-scroll pl-4">
             {sortModes.map((e, i) => (
               <div
                 key={i}
-                className="my-2 mr-2.5 flex h-8 cursor-pointer flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
+                className="my-2 mr-3 flex h-8 cursor-pointer flex-row items-center justify-center rounded-full border-[0.5px] border-main px-6 py-0.5 text-sm"
                 style={{
                   color: sort === e ? "white" : main,
                   fontWeight: sort === e ? "700" : "400",

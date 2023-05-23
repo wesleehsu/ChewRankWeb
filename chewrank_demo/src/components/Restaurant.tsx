@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { useRef, useState } from "react";
+import seedrandom from "seedrandom";
 import { RestaurantExpand } from "~/svgs/RestaurantExpand";
 import { RestaurantSave } from "~/svgs/RestaurantSave";
 import { RestaurantShare } from "~/svgs/RestaurantShare";
@@ -83,7 +84,7 @@ export const Restaurant: React.FC<{
             </div>
             <div className="flex h-6 flex-row items-center pt-1">
               <Image
-                src="/RestaurantStar.svg"
+                src="/RestaurantStar.png"
                 width={18}
                 height={18}
                 alt="Rating"
@@ -141,7 +142,7 @@ export const Restaurant: React.FC<{
         </div>
         {/* <div className="h-20"></div> */}
         <div className="overflow-scroll">
-          <div className="relative flex h-11 w-[480px] flex-row">
+          <div className="relative flex h-11 w-[480px] flex-row align-center">
             <div
               className="absolute top-[2px] h-10 shrink-0 border-b-4 border-main duration-100 ease-in-out"
               style={{
@@ -153,16 +154,20 @@ export const Restaurant: React.FC<{
             {tabs.map((e, i) => (
               <div
                 key={i}
-                className="h-10 grow cursor-pointer border-b-[0.4px] border-[#ffa88d] px-4 py-2 text-sm text-main"
-                style={{
-                  fontWeight: tab === e ? "900" : "200",
-                  // opacity: tab === e ? 1 : 0.6
-                }}
+                className="h-10 cursor-pointer justify-self-center border-b-[0.4px] border-[#ffa88d] px-3 py-2 shrink-0 text-sm text-main"
+                style={
+                  {
+                    // fontWeight: tab === e ? "900" : "200",
+                    // opacity: tab === e ? 1 : 0.6
+                  }
+                }
                 onClick={(e_1) => {
-                  e_1.stopPropagation();
-                  setComing((p) =>
-                    p[0] === 0 ? [e_1.clientX, e_1.clientY] : [0, 0]
-                  );
+                  if (i !== 0) {
+                    e_1.stopPropagation();
+                    setComing((p) =>
+                      p[0] === 0 ? [e_1.clientX, e_1.clientY] : [0, 0]
+                    );
+                  }
                   setTab(e);
                   if (
                     !mainRef.current ||
@@ -181,6 +186,7 @@ export const Restaurant: React.FC<{
                 {e}
               </div>
             ))}
+            <div className="h-10 w-32 shrink-0 border-b-[0.4px] border-[#ffa88d]" />
           </div>
         </div>
         <div className="mx-6 my-6">
@@ -196,7 +202,7 @@ export const Restaurant: React.FC<{
             >
               <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
-                  src="/RestaurantHours.svg"
+                  src="/RestaurantHours.png"
                   width={24}
                   height={24}
                   alt="Hours"
@@ -207,7 +213,7 @@ export const Restaurant: React.FC<{
               <div className="h-8 border-l-[0.4px] border-[#ffa88d]" />
               <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
-                  src="/RestaurantCall.svg"
+                  src="/RestaurantCall.png"
                   width={24}
                   height={24}
                   alt="Call"
@@ -218,7 +224,7 @@ export const Restaurant: React.FC<{
               <div className="h-8 border-l-[0.4px] border-[#ffa88d]" />
               <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
-                  src="/RestaurantLinks.svg"
+                  src="/RestaurantLinks.png"
                   width={24}
                   height={24}
                   alt="Links"
@@ -238,7 +244,7 @@ export const Restaurant: React.FC<{
             >
               <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
-                  src="/RestaurantReserve.svg"
+                  src="/RestaurantReserve.png"
                   width={24}
                   height={24}
                   alt="Reserve"
@@ -249,7 +255,7 @@ export const Restaurant: React.FC<{
               <div className="h-8 border-l-[0.4px] border-[#ffa88d]" />
               <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
-                  src="/RestaurantOrder.svg"
+                  src="/RestaurantOrder.png"
                   width={24}
                   height={24}
                   alt="Order"
@@ -260,7 +266,7 @@ export const Restaurant: React.FC<{
               <div className="h-8 border-l-[0.4px] border-[#ffa88d]" />
               <div className="relative flex w-14 shrink-0 cursor-pointer flex-col items-center">
                 <Image
-                  src="/RestaurantDelivery.svg"
+                  src="/RestaurantDelivery.png"
                   width={24}
                   height={24}
                   alt="Delivery"
@@ -274,7 +280,7 @@ export const Restaurant: React.FC<{
               {/* <div className="mt-6 flex flex-col border-t-[0.4px] border-[#ffa88d] pt-6"> */}
               <div className="flex flex-row items-baseline">
                 <Image
-                  src="/RestaurantDrive.svg"
+                  src="/RestaurantDrive.png"
                   alt="Drive"
                   width={20}
                   height={20}
@@ -287,7 +293,7 @@ export const Restaurant: React.FC<{
               <div className="mb-4 text-[12px] opacity-50">
                 Address Address Address Address Address Address
               </div>
-              <div className="relative mb-8 h-48 cursor-pointer overflow-clip rounded-lg">
+              <div className="relative mb-8 h-48 cursor-pointer overflow-hidden rounded-lg">
                 <Image
                   src="/RestaurantMap.png"
                   alt="Map"
@@ -305,7 +311,14 @@ export const Restaurant: React.FC<{
             <div className="mb-6 w-[60%] flex-col self-center border-t-[0.4px] border-[#ffa88d]"></div>
             <div className="mb-8 flex w-full flex-row flex-wrap">
               {labels
-                .filter(() => Math.random() > 0.5)
+                .filter((e) => {
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+                  const r = seedrandom(
+                    `${restaurantData?.restaurantName || ""}${e}`
+                  );
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+                  return r() > 0.5;
+                })
                 .map((e, i) => (
                   <div
                     key={i}

@@ -12,7 +12,7 @@ const Index: NextPage = () => {
 
   return (
     <div
-      className="fixed flex h-[100vh] w-[100vw] items-center justify-center bg-main"
+      className="fixed flex h-[100vh] w-[100vw] items-center justify-center bg-white"
       // style={{ pointerEvents: coming[0] === 0 ? "none" : "all" }}
       onClick={() => {
         setComing([0, 0]);
@@ -22,13 +22,13 @@ const Index: NextPage = () => {
         <title>ChewRank Demo</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <div className="absolute bottom-[-50px] right-4 z-[0]">
-        <Image src="Logo.png" width={300} height={300} alt="Nav" className="" />
-        {/* <div className="text-white absolute bottom-0 right-0 font-black">App Demo</div> */}
-      </div>
+      {/* <div className="absolute bottom-[-50px] right-4 z-[0]">
+        <Image src="Logo2.png" width={300} height={300} alt="Nav" className="" />
+      </div> */}
       <div
         id="target"
-        className="relative flex h-[720px] w-[360px] flex-col overflow-clip rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0)]"
+        // className="relative flex h-[720px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white"
+        className="relative flex h-[720px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0)]"
       >
         <Restaurant page={page} setPage={setPage} setComing={setComing} />
         <Review page={page} setPage={setPage} setComing={setComing} />
@@ -51,7 +51,7 @@ const Index: NextPage = () => {
         </div>
       </div>
       <div
-        className="absolute z-[9999]  origin-bottom ease-in-out"
+        className="absolute z-[9999] origin-bottom ease-in-out"
         style={{
           left: (coming[0] || 0) - 60,
           top: (coming[1] || 0) - 60,
