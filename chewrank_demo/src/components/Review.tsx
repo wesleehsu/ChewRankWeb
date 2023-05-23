@@ -13,9 +13,9 @@ export const Review: React.FC<{
   page: string;
   setPage: React.Dispatch<React.SetStateAction<string>>;
   setComing: React.Dispatch<React.SetStateAction<number[]>>;
-  setSeed: React.Dispatch<React.SetStateAction<number>>;
+//   setSeed: React.Dispatch<React.SetStateAction<number>>;
   seed: number;
-}> = ({ page, setPage, setComing, seed, setSeed }) => {
+}> = ({ page, setPage, setComing, seed }) => {
   const mainRef = useRef<HTMLDivElement>(null);
   const [restaurant, setRestaurant] = useState(false);
   const tempStr = page.split(" ")[1];
@@ -88,7 +88,7 @@ export const Review: React.FC<{
           setTimeout(() => {
             setPage("Home");
             setNext([]);
-            setSeed(-1);
+            // setSeed(-1);
           }, 100);
           setTimeout(() => {
             if (!mainRef.current) return;

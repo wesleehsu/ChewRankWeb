@@ -7,8 +7,8 @@ import data from "../data";
 export const Home: React.FC<{
   setPage: React.Dispatch<React.SetStateAction<string>>;
   setComing: React.Dispatch<React.SetStateAction<number[]>>;
-  setSeed: React.Dispatch<React.SetStateAction<number>>;
-}> = ({ setPage, setComing, setSeed }) => {
+//   setSeed: React.Dispatch<React.SetStateAction<number>>;
+}> = ({ setPage, setComing }) => {
   // const currentSort = "";
   const [sort, setSort] = useState("Hot");
   const mainRef = useRef<HTMLDivElement>(null);
@@ -38,7 +38,7 @@ export const Home: React.FC<{
         }, 1);
         setTimeout(() => {
           setPage("Review" + " " + i.toString());
-          setSeed(i);
+        //   setSeed(i);
         }, 50);
         setTimeout(() => {
           if (img.parentElement) img.parentElement.style.overflow = "hidden";
