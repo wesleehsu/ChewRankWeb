@@ -9,7 +9,7 @@ import { Home } from "../components/Home";
 const Index: NextPage = () => {
   const [page, setPage] = useState<string>("Home");
   const [coming, setComing] = useState([0, 0]);
-  const [seed, setSeed] = useState(-1);
+//   const [seed, setSeed] = useState(-1);
 
   return (
     <div
@@ -63,10 +63,10 @@ const Index: NextPage = () => {
             page={page}
             setPage={setPage}
             setComing={setComing}
-            setSeed={setSeed}
-            seed={seed}
+            // setSeed={setSeed}
+            // seed={seed}
           />
-          <Home setPage={setPage} setComing={setComing} setSeed={setSeed} />
+          <Home setPage={setPage} setComing={setComing}/>
           <div
             className={
               "absolute inset-x-0 bottom-0 z-[9999] h-[80px] w-[360px] rounded-b-[20px] border-t border-[#FFF6F3] bg-white"

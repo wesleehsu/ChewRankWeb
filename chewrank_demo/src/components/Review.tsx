@@ -14,8 +14,8 @@ export const Review: React.FC<{
   setPage: React.Dispatch<React.SetStateAction<string>>;
   setComing: React.Dispatch<React.SetStateAction<number[]>>;
 //   setSeed: React.Dispatch<React.SetStateAction<number>>;
-  seed: number;
-}> = ({ page, setPage, setComing, seed }) => {
+//   seed: number;
+}> = ({ page, setPage, setComing }) => {
   const mainRef = useRef<HTMLDivElement>(null);
   const [restaurant, setRestaurant] = useState(false);
   const tempStr = page.split(" ")[1];
