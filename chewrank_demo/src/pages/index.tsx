@@ -29,7 +29,7 @@ const Index: NextPage = () => {
       <div className="">
         <div
           className={
-            "absolute top-[20px] z-[10000] flex h-[640px] w-[360px] cursor-pointer flex-col items-center justify-center rounded-b-[20px] bg-white duration-500"
+            "absolute top-[16px] z-[10000] flex h-[640px] w-[360px] cursor-pointer flex-col items-center justify-center rounded-b-[20px] bg-white duration-500"
           }
           onClick={(e) => {
             e.currentTarget.style.opacity = "0";
@@ -55,7 +55,7 @@ const Index: NextPage = () => {
         <div
           id="target"
           // className="relative flex h-[640px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white"
-          className="relative mt-[20px] flex h-[640px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0_/_0.5)]"
+          className="relative mt-[16px] flex h-[640px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0_/_0.5)]"
         >
           <Restaurant page={page} setPage={setPage} setComing={setComing} />
           <Review
@@ -68,7 +68,7 @@ const Index: NextPage = () => {
           <Home setPage={setPage} setComing={setComing} setSeed={setSeed} />
           <div
             className={
-              "absolute inset-x-0 bottom-0 z-[9999] h-[72px] w-[360px] rounded-b-[20px] border-t border-[#FFF6F3] bg-white"
+              "absolute inset-x-0 bottom-0 z-[9999] h-[80px] w-[360px] rounded-b-[20px] border-t border-[#FFF6F3] bg-white"
             }
           >
             <Image

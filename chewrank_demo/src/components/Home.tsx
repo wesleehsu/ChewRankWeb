@@ -148,7 +148,7 @@ export const Home: React.FC<{
           />
         </div>
       </div>
-      <div className="flex h-[640px] w-full flex-col overflow-y-scroll bg-white">
+      <div className="flex h-[620px] w-full flex-col overflow-y-scroll bg-white">
         <div
           className="sticky top-0 z-[100] flex h-20 shrink-0 cursor-pointer flex-row items-center bg-white pl-4 pt-12"
           onClick={(e) => {
