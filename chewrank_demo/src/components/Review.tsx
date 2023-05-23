@@ -207,7 +207,7 @@ export const Review: React.FC<{
               borderRadius: restaurant ? "20px" : "24px",
               borderBottomLeftRadius: restaurant ? "0px" : "24px",
               borderBottomRightRadius: restaurant ? "0px" : "24px",
-              height: restaurant ? "540px" : "48px",
+              height: restaurant ? "580px" : "48px",
             }}
             onClick={(e) => {
               e.stopPropagation();
@@ -228,7 +228,7 @@ export const Review: React.FC<{
               className="shrink-0 duration-0"
               style={{
                 transform: restaurant ? "rotate(180deg) scale(3)" : "",
-                paddingBottom: restaurant ? "36px" : "1px",
+                paddingBottom: restaurant ? "24px" : "1px",
                 paddingRight: restaurant ? "8px" : "0px",
                 alignSelf: restaurant ? "start" : "center",
               }}
