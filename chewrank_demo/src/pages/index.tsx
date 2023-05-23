@@ -14,6 +14,7 @@ const Index: NextPage = () => {
   return (
     <div
       className="fixed flex h-[100vh] w-[100vw] items-start justify-center bg-white"
+      // className="fixed flex h-[100vh] w-[100vw] items-start justify-center bg-main"
       // style={{ pointerEvents: coming[0] === 0 ? "none" : "all" }}
       onClick={() => {
         setComing([0, 0]);
@@ -29,7 +30,7 @@ const Index: NextPage = () => {
       <div className="">
         <div
           className={
-            "absolute top-[16px] z-[10000] flex h-[640px] w-[360px] cursor-pointer flex-col items-center justify-center rounded-b-[20px] bg-white duration-500"
+            "absolute top-[16px] md:top-[52px] z-[10000] flex h-[640px] w-[360px] cursor-pointer flex-col items-center justify-center rounded-b-[20px] bg-white duration-500"
           }
           onClick={(e) => {
             e.currentTarget.style.opacity = "0";
@@ -55,7 +56,7 @@ const Index: NextPage = () => {
         <div
           id="target"
           // className="relative flex h-[640px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white"
-          className="relative mt-[16px] flex h-[640px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0_/_0.5)]"
+          className="relative mt-[16px] md:mt-[52px] flex h-[640px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0_/_0.5)]"
         >
           <Restaurant page={page} setPage={setPage} setComing={setComing} />
           <Review
