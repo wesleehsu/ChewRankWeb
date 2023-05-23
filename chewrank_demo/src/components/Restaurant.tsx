@@ -67,7 +67,7 @@ export const Restaurant: React.FC<{
               </div>
             </div>
             <div
-              className="flex flex-row items-center pb-1"
+              className="flex cursor-pointer flex-row items-center pb-1"
               onClick={(e) => {
                 e.stopPropagation();
                 setComing((p) =>
@@ -109,7 +109,7 @@ export const Restaurant: React.FC<{
               </div>
             </div>
           </div>
-          <div className="mr-6 flex shrink-0 flex-col items-center self-center">
+          <div className="mr-6 flex shrink-0 cursor-pointer flex-col items-center self-center">
             <Image
               src="/RestaurantReview.png"
               width={48}
@@ -126,7 +126,7 @@ export const Restaurant: React.FC<{
             {/* <div className="mt-1 px-2 py-1 text-xs text-main">Review</div> */}
           </div>
           <div
-            className="mr-6 flex w-8 shrink-0 flex-col items-center"
+            className="mr-6 flex w-8 shrink-0 cursor-pointer flex-col items-center"
             onClick={(e) => {
               e.stopPropagation();
               setComing((p) => (p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]));
@@ -142,7 +142,7 @@ export const Restaurant: React.FC<{
         </div>
         {/* <div className="h-20"></div> */}
         <div className="overflow-scroll">
-          <div className="relative flex h-11 w-[480px] flex-row align-center">
+          <div className="align-center relative flex h-11 w-[480px] flex-row">
             <div
               className="absolute top-[2px] h-10 shrink-0 border-b-4 border-main duration-100 ease-in-out"
               style={{
@@ -154,7 +154,7 @@ export const Restaurant: React.FC<{
             {tabs.map((e, i) => (
               <div
                 key={i}
-                className="h-10 cursor-pointer justify-self-center border-b-[0.4px] border-[#ffa88d] px-3 py-2 shrink-0 text-sm text-main"
+                className="h-10 shrink-0 cursor-pointer justify-self-center border-b-[0.4px] border-[#ffa88d] px-3 py-2 text-sm text-main"
                 style={
                   {
                     // fontWeight: tab === e ? "900" : "200",
@@ -192,7 +192,7 @@ export const Restaurant: React.FC<{
         <div className="mx-6 my-6">
           <div className="flex flex-col">
             <div
-              className="mb-5 flex w-full flex-row justify-around"
+              className="mb-5 flex w-full cursor-pointer flex-row justify-around"
               onClick={(e) => {
                 e.stopPropagation();
                 setComing((p) =>
@@ -234,7 +234,7 @@ export const Restaurant: React.FC<{
               </div>
             </div>
             <div
-              className="flex w-full flex-row justify-around"
+              className="flex w-full cursor-pointer flex-row justify-around"
               onClick={(e) => {
                 e.stopPropagation();
                 setComing((p) =>

@@ -1,22 +1,48 @@
-import Image from "next/image";
-import React, { useRef, useState } from "react";
-import { ReviewBack } from "~/svgs/ReviewBack";
-import { ReviewComment } from "~/svgs/ReviewComment";
-import { ReviewLike } from "~/svgs/ReviewLike";
-import { ReviewSave } from "~/svgs/ReviewSave";
-import { ReviewShare } from "~/svgs/ReviewShare";
-import data from "../data";
+import Image from "next/image"
+import React, { useEffect, useRef, useState } from "react"
+import seedrandom from "seedrandom"
+import { nextReview } from "~/nextReview"
+import { ReviewBack } from "~/svgs/ReviewBack"
+import { ReviewComment } from "~/svgs/ReviewComment"
+import { ReviewLike } from "~/svgs/ReviewLike"
+import { ReviewSave } from "~/svgs/ReviewSave"
+import { ReviewShare } from "~/svgs/ReviewShare"
+import data from "../data"
 
 export const Review: React.FC<{
   page: string;
   setPage: React.Dispatch<React.SetStateAction<string>>;
   setComing: React.Dispatch<React.SetStateAction<number[]>>;
-}> = ({ page, setPage, setComing }) => {
+  setSeed: React.Dispatch<React.SetStateAction<number>>;
+  seed: number
+}> = ({ page, setPage, setComing, seed, setSeed }) => {
   const mainRef = useRef<HTMLDivElement>(null);
   const [restaurant, setRestaurant] = useState(false);
   const tempStr = page.split(" ")[1];
-  const reviewData = data.hot[parseInt(String(tempStr))];
+  const id = parseInt(String(tempStr));
+  const reviewData = data.hot[id];
   console.log(reviewData);
+  const [next, setNext] = useState<number[]>([]);
+  useEffect(() => {
+    if (page === "Home") {
+      setNext([]);
+      return;
+    }
+    const a = [...Array(data.hot.length).keys()].filter(
+      (e) => e !== seed
+    );
+    let m = a.length,
+      i;
+    while (m > 0) {
+      const r = seedrandom(`${seed || ""}${m}`);
+      console.log(r());
+      i = Math.floor(r() * m--);
+      const t = a[m];
+      a[m] = a[i] || 0;
+      a[i] = t || 0;
+    }
+    setNext(a);
+  }, [page, seed]);
 
   return (
     <div
@@ -26,7 +52,10 @@ export const Review: React.FC<{
         opacity: /Review/.test(page) ? 1 : 0,
       }}
     >
-      <div className="fixed z-[250] h-12 w-[360px] shrink-0 px-6">
+      <div
+        className="fixed z-[250] h-10 w-[360px] shrink-0 px-6 pt-2"
+        style={{ opacity: restaurant ? 0 : 1 }}
+      >
         <div className="relative h-full w-full">
           <Image
             src="/status_bar_white.png"
@@ -37,7 +66,7 @@ export const Review: React.FC<{
         </div>
       </div>
       <div
-        className="fixed z-[250] h-12 w-[360px] shrink-0 px-6 duration-300"
+        className="fixed z-[700] w-[360px] shrink-0 px-6 duration-300"
         style={{ opacity: restaurant ? 1 : 0 }}
       >
         <div className="relative h-full w-full">
@@ -50,11 +79,34 @@ export const Review: React.FC<{
         </div>
       </div>
       <div
+        className="font-xl absolute left-6 top-12 z-[300] h-16 w-16 cursor-pointer text-white"
+        style={{
+          filter: "drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.8))",
+          visibility: restaurant ? "hidden" : "visible",
+        }}
+        onClick={(e) => {
+          e.stopPropagation();
+          if (!mainRef.current) return;
+          mainRef.current.style.transform = "translateX(400px)";
+          setTimeout(() => {
+            setPage("Home");
+            setNext([]);
+            setSeed(-1)
+          }, 100);
+          setTimeout(() => {
+            if (!mainRef.current) return;
+            mainRef.current.style.transform = "";
+          }, 300);
+        }}
+      >
+        <ReviewBack className="h-8 w-8 p-2" />
+      </div>
+      <div
         ref={mainRef}
-        className="absolute z-[210] flex h-[640px] w-[360px] flex-col overflow-scroll rounded-t-[20px] duration-300 ease-in-out"
+        className="absolute z-[210] flex h-[640px] w-[360px] snap-y snap-mandatory flex-col overflow-scroll rounded-t-[20px] duration-300 ease-in-out"
         // style={{boxShadow: "0 0px 64px 36px rgb(0 0 0 / 0.9)"}}
       >
-        <div className="relative h-[640px] w-[360px] shrink-0">
+        <div className="relative h-[640px] w-[360px] shrink-0 snap-start snap-always">
           {reviewData?.imgFlag == true ? (
             <Image
               src={reviewData?.img || "/Post1/Post.jpg"}
@@ -71,42 +123,14 @@ export const Review: React.FC<{
               src={reviewData?.img || "/Post2/Post.mp4"}
             />
           )}
-          {/* <Image
-            src={reviewData?.img || "/Post1.png"}
-            fill={true}
-            alt="test"
-            className="duration-200"
-            style={{
-              objectFit: "cover",
-              filter: restaurant ? "brightness(.3)" : "",
-            }}
-          /> */}
           <div className="absolute top-0 z-[100] flex h-full w-full flex-col">
-            <div
-              className="font-xl relative ml-6 mt-12 h-16 w-16 cursor-pointer text-white"
-              style={{ filter: "drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.8))" }}
-              onClick={(e) => {
-                e.stopPropagation();
-                if (!mainRef.current) return;
-                mainRef.current.style.transform = "translateX(400px)";
-                setTimeout(() => {
-                  setPage("Home");
-                }, 100);
-                setTimeout(() => {
-                  if (!mainRef.current) return;
-                  mainRef.current.style.transform = "";
-                }, 300);
-              }}
-            >
-              <ReviewBack className="h-8 w-8 p-2" />
-            </div>
             <div className="flex h-full w-full flex-row p-4 duration-[200ms]">
               <div
                 className="grow-1 flex h-full w-full flex-col justify-end"
                 style={{ textShadow: "0px 2px 16px rgba(0, 0, 0, 0.6)" }}
               >
                 <div
-                  className="mb-3 flex flex-row items-end "
+                  className="mb-3 flex cursor-pointer flex-row items-end"
                   style={{
                     filter: "drop-shadow(0px 2px 16px rgba(0, 0, 0, 0.5))",
                   }}
@@ -141,7 +165,7 @@ export const Review: React.FC<{
                 </div>
               </div>
               <div
-                className="flex h-full w-6 shrink-0 flex-col items-center justify-end"
+                className="flex h-full w-6 shrink-0 cursor-pointer flex-col items-center justify-end"
                 style={{
                   filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.6))",
                 }}
@@ -181,9 +205,11 @@ export const Review: React.FC<{
               filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.3))",
               width: restaurant ? "360px" : "284px",
               left: restaurant ? "0px" : "16px",
-              bottom: restaurant ? "-38px" : "18px",
+              bottom: restaurant ? "-0px" : "18px",
               borderRadius: restaurant ? "20px" : "24px",
-              height: restaurant ? "680px" : "48px",
+              borderBottomLeftRadius: restaurant ? "0px" : "24px",
+              borderBottomRightRadius: restaurant ? "0px" : "24px",
+              height: restaurant ? "640px" : "48px",
             }}
             onClick={(e) => {
               e.stopPropagation();
@@ -204,7 +230,7 @@ export const Review: React.FC<{
               className="shrink-0 duration-0"
               style={{
                 transform: restaurant ? "rotate(180deg) scale(3)" : "",
-                paddingBottom: restaurant ? "28px" : "1px",
+                paddingBottom: restaurant ? "24px" : "1px",
                 paddingRight: restaurant ? "8px" : "0px",
                 alignSelf: restaurant ? "start" : "center",
               }}
@@ -247,6 +273,9 @@ export const Review: React.FC<{
             </div>
           </div>
         </div>
+        {next.map((e) => {
+          return nextReview(e, setComing, restaurant, setRestaurant, setPage);
+        })}
       </div>
     </div>
   );

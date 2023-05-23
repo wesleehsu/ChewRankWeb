@@ -7,7 +7,8 @@ import data from "../data";
 export const Home: React.FC<{
   setPage: React.Dispatch<React.SetStateAction<string>>;
   setComing: React.Dispatch<React.SetStateAction<number[]>>;
-}> = ({ setPage, setComing }) => {
+  setSeed: React.Dispatch<React.SetStateAction<number>>;
+}> = ({ setPage, setComing, setSeed }) => {
   const currentSort = "";
   const [sort, setSort] = useState("Hot");
   const mainRef = useRef<HTMLDivElement>(null);
@@ -36,9 +37,10 @@ export const Home: React.FC<{
         }, 1);
         setTimeout(() => {
           setPage("Review" + " " + i.toString());
+          setSeed(i)
         }, 50);
         setTimeout(() => {
-          if (img.parentElement) img.parentElement.style.overflow = "clip";
+          if (img.parentElement) img.parentElement.style.overflow = "hidden";
           img.style.transitionDuration = "0ms";
           img.style.position = "absolute";
           img.style.left = "0";
@@ -144,7 +146,7 @@ export const Home: React.FC<{
       </div>
       <div className="flex h-[720px] w-full flex-col overflow-y-scroll bg-white">
         <div
-          className="sticky top-0 z-[100] flex h-20 shrink-0 flex-row items-center bg-white pl-4 pt-12"
+          className="sticky top-0 z-[100] flex h-20 shrink-0 cursor-pointer flex-row items-center bg-white pl-4 pt-12"
           onClick={(e) => {
             e.stopPropagation();
             setComing((p) => (p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]));
@@ -181,7 +183,7 @@ export const Home: React.FC<{
           </div>
         </div>
         <div
-          className="my-1 flex h-24 w-full shrink-0 flex-row items-center justify-start overflow-scroll border-b-[0.4px] border-[#ffa88d] bg-white px-3 text-main"
+          className="my-1 flex h-24 w-full shrink-0 cursor-pointer flex-row items-center justify-start overflow-scroll border-b-[0.4px] border-[#ffa88d] bg-white px-3 text-main"
           onClick={(e) => {
             e.stopPropagation();
             setComing((p) => (p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]));
@@ -245,7 +247,7 @@ export const Home: React.FC<{
             </div>
           </div>
         </div>
-        <div className="sticky top-20 z-[50] flex h-[56px] shrink-0 flex-row items-center bg-white py-1 pl-[26px]">
+        <div className="sticky top-20 z-[50] flex h-[56px] shrink-0 cursor-pointer flex-row items-center bg-white py-1 pl-[26px]">
           <Image
             src="HomeFilter.png"
             width={22}

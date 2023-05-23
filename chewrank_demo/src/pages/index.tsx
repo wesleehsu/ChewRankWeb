@@ -9,6 +9,7 @@ import { Home } from "../components/Home";
 const Index: NextPage = () => {
   const [page, setPage] = useState<string>("Home");
   const [coming, setComing] = useState([0, 0]);
+  const [seed, setSeed] = useState(-1)
 
   return (
     <div
@@ -28,11 +29,17 @@ const Index: NextPage = () => {
       <div
         id="target"
         // className="relative flex h-[720px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white"
-        className="relative flex h-[720px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0)]"
+        className="relative flex h-[720px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0_/_0.5)]"
       >
         <Restaurant page={page} setPage={setPage} setComing={setComing} />
-        <Review page={page} setPage={setPage} setComing={setComing} />
-        <Home setPage={setPage} setComing={setComing} />
+        <Review
+          page={page}
+          setPage={setPage}
+          setComing={setComing}
+          setSeed={setSeed}
+          seed={seed}
+        />
+        <Home setPage={setPage} setComing={setComing} setSeed={setSeed} />
         <div
           className={
             "absolute inset-x-0 bottom-0 z-[9999] h-20 w-[360px] rounded-b-[20px] border-t border-[#FFF6F3] bg-white"
