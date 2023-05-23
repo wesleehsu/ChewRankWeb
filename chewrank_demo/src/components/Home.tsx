@@ -150,7 +150,7 @@ export const Home: React.FC<{
       </div>
       <div className="flex h-[620px] w-full flex-col overflow-y-scroll bg-white">
         <div
-          className="sticky top-0 z-[100] flex h-20 shrink-0 cursor-pointer flex-row items-center bg-white pl-4 pt-12"
+          className="sticky top-0 pb-2 z-[100] flex h-20 shrink-0 cursor-pointer flex-row items-center bg-white pl-4 pt-11"
           onClick={(e) => {
             e.stopPropagation();
             setComing((p) => (p[0] === 0 ? [e.clientX, e.clientY] : [0, 0]));

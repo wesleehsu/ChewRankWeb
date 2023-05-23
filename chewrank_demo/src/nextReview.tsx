@@ -15,7 +15,7 @@ export const nextReview = (
   return (
     <div
       key={i}
-      className="relative h-[580px] w-[360px] shrink-0 snap-start snap-always"
+      className="relative h-[570px] w-[360px] shrink-0 snap-start snap-always"
     >
       {data.hot[i]?.imgFlag == true ? (
         <Image
@@ -33,16 +33,6 @@ export const nextReview = (
           src={data.hot[i]?.img || "/Post2/Post.mp4"}
         />
       )}
-      {/* <Image
-            src={reviewData?.img || "/Post1.png"}
-            fill={true}
-            alt="test"
-            className="duration-200"
-            style={{
-              objectFit: "cover",
-              filter: restaurant ? "brightness(.3)" : "",
-            }}
-          /> */}
       <div className="absolute top-0 z-[100] flex h-full w-full flex-col">
         <div className="flex h-full w-full flex-row p-4 duration-[200ms]">
           <div

@@ -43,12 +43,12 @@ const Index: NextPage = () => {
             alt="Cover"
             className=""
           />
-          <div className="text-[8.5px] font-black text-main">
+          <div className="text-[10px] font-black text-main">
             RESTAURANT DISCOVERY FOR THE
           </div>
-          <div className="text-[16px] font-black text-main">NEW GENERATION</div>
+          <div className="text-[20px] font-black text-main">NEW GENERATION</div>
           {/* <div className="">DEMO</div> */}
-          <div className="mt-6 text-[12px] text-main opacity-50">
+          <div className="mt-6 text-[14px] text-main opacity-50">
             Click to Experience Now
           </div>
         </div>

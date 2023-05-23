@@ -104,7 +104,7 @@ export const Review: React.FC<{
         className="absolute z-[210] flex h-[580px] w-[360px] snap-y snap-mandatory flex-col overflow-scroll rounded-t-[20px] duration-300 ease-in-out"
         // style={{boxShadow: "0 0px 64px 36px rgb(0 0 0 / 0.9)"}}
       >
-        <div className="relative h-[580px] w-[360px] shrink-0 snap-start snap-always">
+        <div className="relative h-[570px] w-[360px] shrink-0 snap-start snap-always">
           {reviewData?.imgFlag == true ? (
             <Image
               src={reviewData?.img || "/Post1/Post.jpg"}
@@ -207,7 +207,7 @@ export const Review: React.FC<{
               borderRadius: restaurant ? "20px" : "24px",
               borderBottomLeftRadius: restaurant ? "0px" : "24px",
               borderBottomRightRadius: restaurant ? "0px" : "24px",
-              height: restaurant ? "580px" : "48px",
+              height: restaurant ? "540px" : "48px",
             }}
             onClick={(e) => {
               e.stopPropagation();
@@ -228,7 +228,7 @@ export const Review: React.FC<{
               className="shrink-0 duration-0"
               style={{
                 transform: restaurant ? "rotate(180deg) scale(3)" : "",
-                paddingBottom: restaurant ? "24px" : "1px",
+                paddingBottom: restaurant ? "32px" : "1px",
                 paddingRight: restaurant ? "8px" : "0px",
                 alignSelf: restaurant ? "start" : "center",
               }}
@@ -239,7 +239,7 @@ export const Review: React.FC<{
                 visibility: restaurant ? "hidden" : "visible",
               }}
             >
-              <div className="text-[13px] font-black">
+              <div className="truncate text-[13px] font-black">
                 {reviewData?.restaurantName}
               </div>
               <div className="flex flex-row text-[10px] font-bold opacity-50">
