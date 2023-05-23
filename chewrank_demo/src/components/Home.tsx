@@ -9,7 +9,7 @@ export const Home: React.FC<{
   setComing: React.Dispatch<React.SetStateAction<number[]>>;
   setSeed: React.Dispatch<React.SetStateAction<number>>;
 }> = ({ setPage, setComing, setSeed }) => {
-  const currentSort = "";
+  // const currentSort = "";
   const [sort, setSort] = useState("Hot");
   const mainRef = useRef<HTMLDivElement>(null);
   const sortModes = ["Hot", "Following", "New", "Best"];
@@ -272,7 +272,7 @@ export const Home: React.FC<{
                   fontWeight: sort === e ? "700" : "400",
                   background: sort === e ? main : "white",
                 }}
-                onClick={(e_1) => {
+                onClick={() => {
                   // e_1.currentTarget.scrollIntoView();
                   setSort(e);
                 }}

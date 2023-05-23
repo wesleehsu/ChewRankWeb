@@ -10,13 +10,13 @@ export const Restaurant: React.FC<{
   page: string;
   setPage: React.Dispatch<React.SetStateAction<string>>;
   setComing: React.Dispatch<React.SetStateAction<number[]>>;
-}> = ({ page, setPage, setComing }) => {
+}> = ({ page, setComing }) => {
   const tempStr = page.split(" ")[1];
   const restaurantData = data.hot[parseInt(String(tempStr))];
   // console.log(restaurantData);
   const mainRef = useRef<HTMLDivElement>(null);
   const tabs = ["Overview", "Reviews", "Menu", "Official", "Similar Places"];
-  const [tab, setTab] = useState("Overview");
+  // const [tab, setTab] = useState("Overview");
   const [tabUI, setTabUI] = useState([92.3, 24]);
   const labels = [
     "Vegetarian-Friendly",
@@ -168,7 +168,7 @@ export const Restaurant: React.FC<{
                       p[0] === 0 ? [e_1.clientX, e_1.clientY] : [0, 0]
                     );
                   }
-                  setTab(e);
+                  // setTab(e);
                   if (
                     !mainRef.current ||
                     !e_1.currentTarget.parentElement ||
