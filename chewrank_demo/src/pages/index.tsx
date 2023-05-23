@@ -9,11 +9,11 @@ import { Home } from "../components/Home";
 const Index: NextPage = () => {
   const [page, setPage] = useState<string>("Home");
   const [coming, setComing] = useState([0, 0]);
-  const [seed, setSeed] = useState(-1)
+  const [seed, setSeed] = useState(-1);
 
   return (
     <div
-      className="fixed flex h-[100vh] w-[100vw] items-center justify-center bg-white"
+      className="fixed flex h-[100vh] w-[100vw] items-start justify-center bg-white"
       // style={{ pointerEvents: coming[0] === 0 ? "none" : "all" }}
       onClick={() => {
         setComing([0, 0]);
@@ -26,11 +26,11 @@ const Index: NextPage = () => {
       {/* <div className="absolute bottom-[-50px] right-4 z-[0]">
         <Image src="Logo2.png" width={300} height={300} alt="Nav" className="" />
       </div> */}
-      <div className="scale-90">
+      <div className="">
         <div
           id="target"
-          // className="relative flex h-[720px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white"
-          className="relative flex h-[720px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0_/_0.5)]"
+          // className="relative flex h-[660px] w-[340px] flex-col overflow-hidden rounded-[20px] bg-white"
+          className="relative mt-[24px] flex h-[660px] w-[340px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0_/_0.5)]"
         >
           <Restaurant page={page} setPage={setPage} setComing={setComing} />
           <Review
@@ -43,7 +43,7 @@ const Index: NextPage = () => {
           <Home setPage={setPage} setComing={setComing} setSeed={setSeed} />
           <div
             className={
-              "absolute inset-x-0 bottom-0 z-[9999] h-20 w-[360px] rounded-b-[20px] border-t border-[#FFF6F3] bg-white"
+              "absolute inset-x-0 bottom-0 z-[9999] h-[72px] w-[340px] rounded-b-[20px] border-t border-[#FFF6F3] bg-white"
             }
           >
             <Image

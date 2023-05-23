@@ -1,21 +1,21 @@
-import Image from "next/image"
-import data from "./data"
-import { ReviewComment } from "./svgs/ReviewComment"
-import { ReviewLike } from "./svgs/ReviewLike"
-import { ReviewSave } from "./svgs/ReviewSave"
-import { ReviewShare } from "./svgs/ReviewShare"
+import Image from "next/image";
+import data from "./data";
+import { ReviewComment } from "./svgs/ReviewComment";
+import { ReviewLike } from "./svgs/ReviewLike";
+import { ReviewSave } from "./svgs/ReviewSave";
+import { ReviewShare } from "./svgs/ReviewShare";
 
 export const nextReview = (
   i: number,
   setComing: React.Dispatch<React.SetStateAction<number[]>>,
   restaurant: boolean,
   setRestaurant: React.Dispatch<React.SetStateAction<boolean>>,
-  setPage: React.Dispatch<React.SetStateAction<string>>,
+  setPage: React.Dispatch<React.SetStateAction<string>>
 ) => {
   return (
     <div
       key={i}
-      className="relative h-[640px] w-[360px] shrink-0 snap-start snap-always"
+      className="relative h-[590px] w-[340px] shrink-0 snap-start snap-always"
     >
       {data.hot[i]?.imgFlag == true ? (
         <Image
@@ -118,13 +118,13 @@ export const nextReview = (
         className="absolute z-[500] flex cursor-pointer flex-row items-center bg-white px-4 duration-[240ms]"
         style={{
           filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.3))",
-          width: restaurant ? "360px" : "284px",
+          width: restaurant ? "340px" : "284px",
           left: restaurant ? "0px" : "16px",
           bottom: restaurant ? "0px" : "18px",
           borderRadius: restaurant ? "20px" : "24px",
           borderBottomLeftRadius: restaurant ? "0px" : "24px",
           borderBottomRightRadius: restaurant ? "0px" : "24px",
-          height: restaurant ? "640px" : "48px",
+          height: restaurant ? "590px" : "48px",
         }}
         onClick={(e) => {
           e.stopPropagation();

@@ -33,12 +33,12 @@ export const Home: React.FC<{
           img.style.left = `${mp.x - pp.x}px`;
           img.style.top = `${mp.y - pp.y}px`;
           img.style.zIndex = "200";
-          img.style.width = "360px";
-          img.style.height = "640px";
+          img.style.width = "340px";
+          img.style.height = "590px";
         }, 1);
         setTimeout(() => {
           setPage("Review" + " " + i.toString());
-          setSeed(i)
+          setSeed(i);
         }, 50);
         setTimeout(() => {
           if (img.parentElement) img.parentElement.style.overflow = "hidden";
@@ -79,7 +79,7 @@ export const Home: React.FC<{
         {
           <div
             id={`previewImg-${i}`}
-            className="absolute left-0 top-0 h-full w-full ease-in-out"
+            className="absolute left-0 top-0 h-full w-full overflow-hidden ease-in-out"
             style={{
               height: `${e.height}px`,
             }}
@@ -146,7 +146,7 @@ export const Home: React.FC<{
           />
         </div>
       </div>
-      <div className="flex h-[720px] w-full flex-col overflow-y-scroll bg-white">
+      <div className="flex h-[660px] w-full flex-col overflow-y-scroll bg-white">
         <div
           className="sticky top-0 z-[100] flex h-20 shrink-0 cursor-pointer flex-row items-center bg-white pl-4 pt-12"
           onClick={(e) => {
