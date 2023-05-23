@@ -141,19 +141,19 @@ export const nextReview = (
           }}
         />
         <div
-          className="mx-4 mt-[2px] flex shrink-0 flex-col leading-[15px] duration-0"
+          className="ml-4 shrink-0 mt-[2px] flex flex-col truncate leading-[15px] duration-0"
           style={{
             visibility: restaurant ? "hidden" : "visible",
           }}
         >
-          <div className="text-[13px] font-black">
+          <div className="truncate text-[13px] font-black">
             {data.hot[i]?.restaurantName}
           </div>
           <div className="flex flex-row text-[10px] font-bold opacity-50">
             <div>{data.hot[i]?.category}</div>
             <div className="mx-1">•</div>
-            <div>{data.hot[i]?.distance}</div>
-            <div className="mx-0.5">mil</div>
+            <div className="">{data.hot[i]?.distance}</div>
+            <div className="mx-0.5 truncate">mil</div>
           </div>
         </div>
         <div
