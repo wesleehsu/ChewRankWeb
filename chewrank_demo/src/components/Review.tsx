@@ -33,7 +33,6 @@ export const Review: React.FC<{
       i;
     while (m > 0) {
       const r = seedrandom(`${seed || ""}${m}`);
-      console.log(r());
       i = Math.floor(r() * m--);
       const t = a[m];
       a[m] = a[i] || 0;
@@ -271,9 +270,9 @@ export const Review: React.FC<{
             </div>
           </div>
         </div>
-        {next.map((e) => {
+        {/* {next.map((e) => {
           return nextReview(e, setComing, restaurant, setRestaurant, setPage);
-        })}
+        })} */}
         <div className="mb-48 h-48 w-full" />
       </div>
     </div>
