@@ -27,6 +27,7 @@ export const Home: React.FC<{
 
         setTimeout(() => {
           if (img.parentElement) img.parentElement.style.overflow = "visible";
+          img.style.overflow = "visible";
           img.style.transitionDuration = "200ms";
           img.style.position = "absolute";
           img.style.left = `${mp.x - pp.x}px`;
@@ -41,6 +42,7 @@ export const Home: React.FC<{
         }, 50);
         setTimeout(() => {
           if (img.parentElement) img.parentElement.style.overflow = "hidden";
+          img.style.overflow = "hidden";
           img.style.transitionDuration = "0ms";
           img.style.position = "absolute";
           img.style.left = "0";
