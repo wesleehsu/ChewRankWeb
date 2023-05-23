@@ -23,23 +23,23 @@ export const Review: React.FC<{
   const reviewData = data.hot[id];
   console.log(reviewData);
   const [next, setNext] = useState<number[]>([]);
-  useEffect(() => {
-    if (page === "Home") {
-      setNext([]);
-      return;
-    }
-    const a = [...Array(data.hot.length).keys()].filter((e) => e !== seed);
-    let m = a.length,
-      i;
-    while (m > 0) {
-      const r = seedrandom(`${seed || ""}${m}`);
-      i = Math.floor(r() * m--);
-      const t = a[m];
-      a[m] = a[i] || 0;
-      a[i] = t || 0;
-    }
-    setNext(a);
-  }, [page, seed]);
+//   useEffect(() => {
+//     if (page === "Home") {
+//       setNext([]);
+//       return;
+//     }
+//     const a = [...Array(data.hot.length).keys()].filter((e) => e !== seed);
+//     let m = a.length,
+//       i;
+//     while (m > 0) {
+//       const r = seedrandom(`${seed || ""}${m}`);
+//       i = Math.floor(r() * m--);
+//       const t = a[m];
+//       a[m] = a[i] || 0;
+//       a[i] = t || 0;
+//     }
+//     setNext(a);
+//   }, [page, seed]);
 
   return (
     <div
