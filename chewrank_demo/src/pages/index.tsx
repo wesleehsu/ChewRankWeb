@@ -29,7 +29,7 @@ const Index: NextPage = () => {
       <div className="">
         <div
           className={
-            "cursor-pointer absolute top-6 z-[10000] flex h-[640px] w-[340px] flex-col items-center justify-center rounded-b-[20px] bg-white duration-500"
+            "absolute top-[20px] z-[10000] flex h-[640px] w-[360px] cursor-pointer flex-col items-center justify-center rounded-b-[20px] bg-white duration-500"
           }
           onClick={(e) => {
             e.currentTarget.style.opacity = "0";
@@ -43,14 +43,19 @@ const Index: NextPage = () => {
             alt="Cover"
             className=""
           />
-          <div className="">Restaurant Discovery for the New Generation</div>
-          <div className="">Demo</div>
-          <div className="rounded-full py-2 px-4 border">Experience Now</div>
+          <div className="text-[8.5px] font-black text-main">
+            RESTAURANT DISCOVERY FOR THE
+          </div>
+          <div className="text-[16px] font-black text-main">NEW GENERATION</div>
+          {/* <div className="">DEMO</div> */}
+          <div className="mt-6 text-[12px] text-main opacity-50">
+            Click to Experience Now
+          </div>
         </div>
         <div
           id="target"
-          // className="relative flex h-[640px] w-[340px] flex-col overflow-hidden rounded-[20px] bg-white"
-          className="relative mt-[24px] flex h-[640px] w-[340px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0_/_0.5)]"
+          // className="relative flex h-[640px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white"
+          className="relative mt-[20px] flex h-[640px] w-[360px] flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_25px_50px_-12px_rgb(179_43_0_/_0.5)]"
         >
           <Restaurant page={page} setPage={setPage} setComing={setComing} />
           <Review
@@ -63,7 +68,7 @@ const Index: NextPage = () => {
           <Home setPage={setPage} setComing={setComing} setSeed={setSeed} />
           <div
             className={
-              "absolute inset-x-0 bottom-0 z-[9999] h-[72px] w-[340px] rounded-b-[20px] border-t border-[#FFF6F3] bg-white"
+              "absolute inset-x-0 bottom-0 z-[9999] h-[72px] w-[360px] rounded-b-[20px] border-t border-[#FFF6F3] bg-white"
             }
           >
             <Image

@@ -15,7 +15,7 @@ export const nextReview = (
   return (
     <div
       key={i}
-      className="relative h-[580px] w-[340px] shrink-0 snap-start snap-always"
+      className="relative h-[580px] w-[360px] shrink-0 snap-start snap-always"
     >
       {data.hot[i]?.imgFlag == true ? (
         <Image
@@ -78,7 +78,7 @@ export const nextReview = (
                 </div>
               </div>
             </div>
-            <div className="mb-[64px] text-xs font-semibold text-white pr-2">
+            <div className="mb-[64px] pr-2 text-xs font-semibold text-white">
               {data.hot[i]?.description}
             </div>
           </div>
@@ -118,7 +118,7 @@ export const nextReview = (
         className="absolute z-[500] flex cursor-pointer flex-row items-center bg-white px-4 duration-[240ms]"
         style={{
           filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.3))",
-          width: restaurant ? "340px" : "270px",
+          width: restaurant ? "360px" : "270px",
           left: restaurant ? "0px" : "16px",
           bottom: restaurant ? "0px" : "24px",
           borderRadius: restaurant ? "20px" : "24px",

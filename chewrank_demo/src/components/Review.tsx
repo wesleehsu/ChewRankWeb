@@ -51,7 +51,7 @@ export const Review: React.FC<{
       }}
     >
       <div
-        className="fixed z-[250] h-10 w-[340px] shrink-0 px-6 pt-2"
+        className="fixed z-[250] h-10 w-[360px] shrink-0 px-6 pt-2"
         style={{ opacity: restaurant ? 0 : 1 }}
       >
         <div className="relative h-full w-full">
@@ -64,7 +64,7 @@ export const Review: React.FC<{
         </div>
       </div>
       <div
-        className="fixed z-[700] w-[340px] shrink-0 px-6 duration-300"
+        className="fixed z-[700] w-[360px] shrink-0 px-6 duration-300"
         style={{ opacity: restaurant ? 1 : 0 }}
       >
         <div className="relative h-full w-full">
@@ -101,10 +101,10 @@ export const Review: React.FC<{
       </div>
       <div
         ref={mainRef}
-        className="absolute z-[210] flex h-[580px] w-[340px] snap-y snap-mandatory flex-col overflow-scroll rounded-t-[20px] duration-300 ease-in-out"
+        className="absolute z-[210] flex h-[580px] w-[360px] snap-y snap-mandatory flex-col overflow-scroll rounded-t-[20px] duration-300 ease-in-out"
         // style={{boxShadow: "0 0px 64px 36px rgb(0 0 0 / 0.9)"}}
       >
-        <div className="relative h-[580px] w-[340px] shrink-0 snap-start snap-always">
+        <div className="relative h-[580px] w-[360px] shrink-0 snap-start snap-always">
           {reviewData?.imgFlag == true ? (
             <Image
               src={reviewData?.img || "/Post1/Post.jpg"}
@@ -158,7 +158,7 @@ export const Review: React.FC<{
                     </div>
                   </div>
                 </div>
-                <div className="mb-[64px] text-xs font-semibold text-white pr-2">
+                <div className="mb-[64px] pr-2 text-xs font-semibold text-white">
                   {reviewData?.description}
                 </div>
               </div>
@@ -201,7 +201,7 @@ export const Review: React.FC<{
             className="absolute z-[500] flex cursor-pointer flex-row items-center bg-white px-4 duration-[240ms]"
             style={{
               filter: "drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.3))",
-              width: restaurant ? "340px" : "270px",
+              width: restaurant ? "360px" : "270px",
               left: restaurant ? "0px" : "16px",
               bottom: restaurant ? "0px" : "24px",
               borderRadius: restaurant ? "20px" : "24px",

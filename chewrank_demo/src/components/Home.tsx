@@ -33,7 +33,7 @@ export const Home: React.FC<{
           img.style.left = `${mp.x - pp.x}px`;
           img.style.top = `${mp.y - pp.y}px`;
           img.style.zIndex = "200";
-          img.style.width = "340px";
+          img.style.width = "360px";
           img.style.height = "580px";
         }, 1);
         setTimeout(() => {
@@ -74,6 +74,7 @@ export const Home: React.FC<{
             //   webkit-playsinline
             playsInline
             src={e.img}
+            className="rounded-xl"
           />
         )}
         {
@@ -99,6 +100,7 @@ export const Home: React.FC<{
                 //   webkit-playsinline
                 playsInline
                 src={e.img}
+                className="rounded-xl"
               />
             )}
           </div>
@@ -206,7 +208,7 @@ export const Home: React.FC<{
               </div>
               <div className="mt-2 text-xs font-bold text-main">Get Now!</div>
             </div>
-            <div className="ml-[24px] flex cursor-pointer flex-col items-center">
+            <div className="ml-[22px] flex cursor-pointer flex-col items-center">
               <Image
                 src="/HomeQuickFilter1.png"
                 width={56}
@@ -215,7 +217,7 @@ export const Home: React.FC<{
               />
               <div className="mt-1 text-xs font-bold text-main">Korean</div>
             </div>
-            <div className="ml-[24px] flex cursor-pointer flex-col items-center">
+            <div className="ml-[22px] flex cursor-pointer flex-col items-center">
               <Image
                 src="/HomeQuickFilter3.png"
                 width={56}
@@ -226,7 +228,7 @@ export const Home: React.FC<{
                 Party Vibes
               </div>
             </div>
-            <div className="ml-[25px] flex shrink-0 cursor-pointer flex-col items-center">
+            <div className="ml-[20px] flex shrink-0 cursor-pointer flex-col items-center">
               <Image
                 src="/HomeQuickFilter2.png"
                 width={56}
@@ -235,7 +237,7 @@ export const Home: React.FC<{
               />
               <div className="mt-1 text-xs font-bold text-main">Boba</div>
             </div>
-            <div className="ml-[20px] flex shrink-0 cursor-pointer flex-col items-center">
+            <div className="ml-[14px] flex shrink-0 cursor-pointer flex-col items-center">
               <Image
                 src="/HomeQuickFilter4.png"
                 width={56}
@@ -249,7 +251,7 @@ export const Home: React.FC<{
             </div>
           </div>
         </div>
-        <div className="sticky top-20 z-[50] flex h-[56px] shrink-0 cursor-pointer flex-row items-center bg-white py-1 pl-[26px]">
+        <div className="sticky top-20 z-[50] flex h-[56px] shrink-0 cursor-pointer flex-row items-center bg-white py-1 pl-[22px]">
           <Image
             src="HomeFilter.png"
             width={22}
@@ -283,13 +285,13 @@ export const Home: React.FC<{
             <div className="h-1 w-6 shrink-0" />
           </div>
         </div>
-        <div className="mx-2 mb-12 flex flex-row items-start justify-center bg-white">
-          <div className="mr-1 flex w-full flex-col">
+        <div className="mb-12 flex flex-row items-start justify-center rounded-[20px] bg-white">
+          <div className="pl-2 pr-1 flex w-[180px] flex-col shrink-0">
             {data.hot.map(
               (e, i) => i % 2 === 0 && e.feature == sort && reviewPreview(e, i)
             )}
           </div>
-          <div className="ml-1 flex w-full flex-col">
+          <div className="pr-2 pl-1 flex w-[180px] flex-col shrink-0">
             {data.hot.map(
               (e, i) => i % 2 === 1 && e.feature == sort && reviewPreview(e, i)
             )}
